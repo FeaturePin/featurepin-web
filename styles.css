@@ -422,11 +422,12 @@ p  { margin: 0; }
   letter-spacing: 0.06em;
 }
 .step h3 { font-size: 19px; }
-.step p { color: var(--fg-muted); font-size: 14.5px; flex: 1; }
+.step p { color: var(--fg-muted); font-size: 14.5px; }
 .step-visual {
-  margin-top: 24px;
+  margin-top: auto;
   border-top: 1px dashed var(--line);
   padding-top: 18px;
+  min-height: 160px;
 }
 
 /* code block */
