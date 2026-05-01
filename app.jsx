@@ -366,7 +366,7 @@ function Pricing() {
               {p.ribbon && <span className="ribbon">{p.ribbon}</span>}
               <div className="plan-name">{p.name}</div>
               <div className="plan-price">
-                <span className="amt">{p.price}</span>
+                <span className={"amt" + (p.name === "Enterprise" ? " text-price" : "")}>{p.price}</span>
                 {p.per && <span className="per">{p.per}</span>}
               </div>
               <div className="plan-mau">
