@@ -491,8 +491,8 @@ p  { margin: 0; }
 }
 .plan-name { font-size: 14px; font-family: var(--mono); color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.06em; }
 .plan-price { display: flex; align-items: baseline; gap: 6px; }
+.plan-price { min-height: 56px; }
 .plan-price .amt { font-size: 40px; font-weight: 600; letter-spacing: -0.03em; }
-.plan-price .amt.text-price { font-size: 28px; }
 .plan-price .per { color: var(--fg-dim); font-size: 13px; }
 .plan-mau { font-size: 13.5px; color: var(--fg-muted); line-height: 1.5; min-height: 80px; }
 .plan-cta { margin-top: auto; }
