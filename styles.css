@@ -82,7 +82,7 @@ section { position: relative; }
   font-weight: 400;
 }
 h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
-h1 { font-size: clamp(44px, 7.2vw, 92px); line-height: 0.98; letter-spacing: -0.035em; }
+h1 { font-size: clamp(44px, 5.5vw, 72px); line-height: 0.98; letter-spacing: -0.035em; }
 h2 { font-size: clamp(32px, 4.6vw, 56px); line-height: 1.04; letter-spacing: -0.028em; }
 h3 { font-size: clamp(20px, 2vw, 24px); line-height: 1.2; }
 p  { margin: 0; }
@@ -301,7 +301,7 @@ p  { margin: 0; }
 @media (max-width: 880px) { .pain-grid { grid-template-columns: 1fr; } }
 .pain h2 em { font-style: normal; color: var(--fg-dim); }
 .pain-body { font-size: clamp(20px, 1.8vw, 26px); line-height: 1.4; color: var(--fg); letter-spacing: -0.012em; max-width: 22ch; }
-.pain-body span.bad { color: var(--accent); }
+.pain-body span.bad { color: var(--accent); font-weight: 600; }
 
 /* fake amplitude card */
 .amp-card {
@@ -355,7 +355,7 @@ p  { margin: 0; }
   border-radius: 10px;
   background: var(--bg-2);
   padding: 18px;
-  min-height: 160px;
+  min-height: 120px;
   position: relative;
   overflow: hidden;
 }
@@ -524,7 +524,7 @@ p  { margin: 0; }
   color: var(--fg);
 }
 .faq-q .plus {
-  width: 22px; height: 22px;
+  width: 32px; height: 32px;
   display: grid; place-items: center;
   border: 1px solid var(--line-2);
   border-radius: 6px;
@@ -553,17 +553,17 @@ p  { margin: 0; }
 .final::before {
   content: ""; position: absolute; inset: 0;
   background-image:
-    linear-gradient(to right, color-mix(in oklch, var(--accent-ink) 12%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklch, var(--accent-ink) 12%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in oklch, var(--accent-ink) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklch, var(--accent-ink) 6%, transparent) 1px, transparent 1px);
   background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 30%, transparent 80%);
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 20%, black 10%, transparent 70%);
   pointer-events: none;
 }
 .final-inner { position: relative; }
 .final h2 { font-size: clamp(36px, 6vw, 76px); letter-spacing: -0.035em; line-height: 0.98; max-width: 14ch; }
 .final p { font-size: 18px; margin-top: 22px; opacity: 0.8; }
-.final .btn-primary { background: var(--accent-ink); color: var(--accent); margin-top: 36px; }
-.final .btn-primary:hover { filter: brightness(1.4); }
+.final .btn-primary { background: oklch(0.98 0 0); color: var(--accent-ink); margin-top: 36px; }
+.final .btn-primary:hover { filter: brightness(0.96); }
 
 /* ---------- Footer ---------- */
 .footer { padding: 48px 0 64px; }
