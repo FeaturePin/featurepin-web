@@ -427,7 +427,11 @@ p  { margin: 0; }
   margin-top: auto;
   border-top: 1px dashed var(--line);
   padding-top: 18px;
-  min-height: 160px;
+  height: 185px;
+  overflow: hidden;
+}
+@media (max-width: 880px) {
+  .step-visual { height: auto; overflow: visible; }
 }
 
 /* code block */
