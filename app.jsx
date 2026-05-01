@@ -2,8 +2,8 @@
 const { useState, useEffect, useRef } = React;
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "theme": "dark",
-  "accent": "green",
+  "theme": "light",
+  "accent": "cyan",
   "heroVariant": "mockup"
 }/*EDITMODE-END*/;
 
@@ -30,7 +30,6 @@ function Nav() {
         </a>
         <nav className="nav-links" aria-label="Primary">
           <a className="nav-link" href="#pricing">Pricing</a>
-          <a className="nav-link" href="#docs">Docs</a>
           <a className="btn btn-primary" href="#cta">Start for free</a>
         </nav>
       </div>
