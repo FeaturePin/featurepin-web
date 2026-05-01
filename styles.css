@@ -410,7 +410,7 @@ p  { margin: 0; }
   border-radius: var(--radius-lg);
   padding: 28px;
   display: flex; flex-direction: column; gap: 16px;
-  min-height: 340px;
+  min-width: 0;
 }
 @media (max-width: 880px) {
   .step { min-height: auto; overflow: hidden; }
@@ -424,7 +424,7 @@ p  { margin: 0; }
 .step h3 { font-size: 19px; }
 .step p { color: var(--fg-muted); font-size: 14.5px; }
 .step-visual {
-  margin-top: auto;
+  margin-top: 24px;
   border-top: 1px dashed var(--line);
   padding-top: 18px;
 }
