@@ -297,7 +297,7 @@ function How() {
                 <div className="code" style={{flex: 1, padding: "8px 10px", whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis"}}>
                   <span className="c">https://</span>yoursaas.com/whats-new
                 </div>
-                <button className="pin-btn-primary" style={{padding:"8px 12px"}}>Generate</button>
+                <span className="pin-btn-primary" style={{padding:"8px 12px", cursor:"default", userSelect:"none"}}>Generate</span>
               </div>
               <div style={{marginTop: 12, display:"flex", flexDirection:"column", gap: 6}}>
                 {["Bulk export, finally.", "Custom roles for your team.", "Slack integration is here."].map((t, i)=>(
