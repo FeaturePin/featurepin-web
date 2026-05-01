@@ -440,11 +440,12 @@ p  { margin: 0; }
   padding: 14px;
   color: var(--fg-muted);
   line-height: 1.6;
-  overflow-x: auto;
-  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: hidden;
 }
 @media (max-width: 640px) {
-  .code { font-size: 11px; white-space: pre-wrap; word-break: break-all; }
+  .code { font-size: 11px; }
 }
 .code .k { color: oklch(0.78 0.13 290); }
 .code .s { color: var(--accent); }
