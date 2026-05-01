@@ -422,7 +422,7 @@ p  { margin: 0; }
   letter-spacing: 0.06em;
 }
 .step h3 { font-size: 19px; }
-.step p { color: var(--fg-muted); font-size: 14.5px; }
+.step p { color: var(--fg-muted); font-size: 14.5px; flex: 1; }
 .step-visual {
   margin-top: 24px;
   border-top: 1px dashed var(--line);
