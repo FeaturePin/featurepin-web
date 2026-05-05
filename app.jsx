@@ -290,8 +290,8 @@ function How() {
         <div className="steps">
           <div className="step">
             <div className="step-num">01 · SEE IT WORK</div>
-            <h3>Drop a URL. Get 10 ready announcements.</h3>
-            <p>Give us your features or pricing page URL. We generate 10 ready-to-publish announcements and nudges instantly.</p>
+            <h3>Drop a URL. Get 10 announcement drafts.</h3>
+            <p>Give us your features or pricing page URL. We generate 10 ready-to-review announcement drafts instantly.</p>
             <div className="step-visual">
               <div style={{display:"flex", gap:8, alignItems:"center"}}>
                 <div className="code" style={{flex: 1, padding: "8px 10px", whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis"}}>
@@ -316,7 +316,7 @@ function How() {
             <h3>Paste one snippet into your product. That's it.</h3>
             <p>One line of JavaScript. Same model as Intercom. Engineering involvement: 60 seconds.</p>
             <div className="step-visual">
-              <pre className="code"><span className="c">{"// add to <head>"}</span>{"\n"}<span className="k">{"<script "}</span>src=<span className="s">"https://cdn.featurepin.com/v1.js"</span>{" "}data-key=<span className="s">"pk_live_…"</span><span className="k">{"></script>"}</span></pre>
+              <pre className="code"><span className="c">{"// add to <head>"}</span>{"\n"}<span className="k">{"<script "}</span>src=<span className="s">"https://cdn.featurepin.com/fp.js"</span>{" "}data-workspace-id=<span className="s">"YOUR_ID"</span><span className="k">{"></script>"}</span></pre>
             </div>
           </div>
 
@@ -347,9 +347,9 @@ function How() {
 function Pricing() {
   const plans = [
     { name: "Free",    price: "$0",   per: "forever",   mau: "Up to 1,000 monthly active users.\n1 team member.\nFeaturePin branding.", cta: "Start for free", primary: false },
-    { name: "Grow",    price: "$29",  per: "per month", mau: "Up to 10,000 monthly active users.\nUp to 5 team members.\nNo branding.", cta: "Start for free", primary: true,  ribbon: "Recommended" },
-    { name: "Scale",   price: "$79",  per: "per month", mau: "Up to 25,000 monthly active users.\nUp to 10 team members.", cta: "Start for free", primary: false },
-    { name: "Enterprise", price: "Let's talk", per: "", mau: "25,000+ monthly active users.\nUnlimited team members.\nCustom terms.", cta: "Get in touch", primary: false },
+    { name: "Grow",    price: "$29",  per: "per month", mau: "Up to 10,000 monthly active users.\nUp to 5 team members.\nNo branding.", cta: "Get started", primary: true,  ribbon: "Recommended" },
+    { name: "Scale",   price: "$79",  per: "per month", mau: "Up to 25,000 monthly active users.\nUp to 10 team members.\nCustom branding.", cta: "Get started", primary: false },
+    { name: "Enterprise", price: "Let's talk", per: "", mau: "25,000+ monthly active users.\nUnlimited team members.\nCustom terms.", cta: "Contact us", primary: false },
   ];
   return (
     <section className="pricing" id="pricing">
@@ -389,11 +389,11 @@ function Pricing() {
 /* ---------- FAQ ---------- */
 function FAQ() {
   const items = [
-    { q: "What's a MAU?", a: "A monthly active user is anyone who logs into your product at least once a month." },
+    { q: "What's a MAU?", a: "A monthly active user is anyone who loads a page in your product with FeaturePin installed — once in the last 30 days. Anonymous users count too." },
     { q: "Do I need to involve engineering?", a: "Just once, to paste a one-line snippet. After that, you're on your own." },
     { q: "Can I cancel anytime?", a: "Yes. No contracts, no commitments." },
     { q: "What happens if I exceed my MAU limit?", a: "We'll let you know. You won't get cut off without warning." },
-    { q: "Why not build it ourselves with AI?", a: "You could. It would take 3 to 4 weeks of engineering time, and then someone has to maintain it. FeaturePin is running in 5 minutes — and comes with something you can't build alone: adoption benchmarks by industry vertical, so you know if your 12% is good or terrible compared to products like yours." },
+    { q: "Why not build it ourselves with AI?", a: "You could. It would take 3 to 4 weeks of engineering time, and then someone has to maintain it. FeaturePin is running in 5 minutes — and every time you ship a feature, you spend zero minutes on tooling and all of them on the message." },
   ];
   const [open, setOpen] = useState(0);
   return (
