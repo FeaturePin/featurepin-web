@@ -346,10 +346,10 @@ function How() {
 /* ---------- Pricing ---------- */
 function Pricing() {
   const plans = [
-    { name: "Free",    price: "$0",   per: "forever",   mau: "Up to 1,000 monthly active users.\nAll features.\nFeaturePin branding.", cta: "Start for free", primary: false },
-    { name: "Grow",    price: "$29",  per: "per month", mau: "Up to 10,000 monthly active users.\nNo branding.", cta: "Start for free", primary: true,  ribbon: "Recommended" },
-    { name: "Scale",   price: "$79",  per: "per month", mau: "Up to 25,000 monthly active users.", cta: "Start for free", primary: false },
-    { name: "Enterprise", price: "Let's talk", per: "", mau: "25,000+ monthly active users.\nCustom terms.", cta: "Get in touch", primary: false },
+    { name: "Free",    price: "$0",   per: "forever",   mau: "Up to 1,000 monthly active users.\n1 team member.\nFeaturePin branding.", cta: "Start for free", primary: false },
+    { name: "Grow",    price: "$29",  per: "per month", mau: "Up to 10,000 monthly active users.\nUp to 5 team members.\nNo branding.", cta: "Start for free", primary: true,  ribbon: "Recommended" },
+    { name: "Scale",   price: "$79",  per: "per month", mau: "Up to 25,000 monthly active users.\nUp to 10 team members.", cta: "Start for free", primary: false },
+    { name: "Enterprise", price: "Let's talk", per: "", mau: "25,000+ monthly active users.\nUnlimited team members.\nCustom terms.", cta: "Get in touch", primary: false },
   ];
   return (
     <section className="pricing" id="pricing">
