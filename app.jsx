@@ -346,10 +346,14 @@ function How() {
 /* ---------- Pricing ---------- */
 function Pricing() {
   const plans = [
-    { name: "Free",    price: "$0",   per: "forever",   mau: "Up to 1,000 monthly active users.\n1 team member.\nFeaturePin branding.", cta: "Start for free", primary: false },
-    { name: "Grow",    price: "$29",  per: "per month", mau: "Up to 10,000 monthly active users.\nUp to 5 team members.\nNo branding.", cta: "Get started", primary: true,  ribbon: "Recommended" },
-    { name: "Scale",   price: "$79",  per: "per month", mau: "Up to 25,000 monthly active users.\nUp to 10 team members.\nCustom branding.", cta: "Get started", primary: false },
-    { name: "Enterprise", price: "Let's talk", per: "", mau: "25,000+ monthly active users.\nUnlimited team members.\nCustom terms.", cta: "Contact us", primary: false },
+    { name: "Free",       price: "$0",        per: "forever",   cta: "Start for free", primary: false,
+      items: ["Up to 1K MAU", "1 team member", "FeaturePin branding"] },
+    { name: "Grow",       price: "$29",       per: "per month", cta: "Get started",    primary: true, ribbon: "Recommended",
+      items: ["Up to 10K MAU", "5 team members", "Custom branding"] },
+    { name: "Scale",      price: "$79",       per: "per month", cta: "Get started",    primary: false,
+      items: ["Up to 25K MAU", "10 team members", "Custom branding"] },
+    { name: "Enterprise", price: "Let's talk", per: "",         cta: "Contact us",     primary: false,
+      items: ["Unlimited MAU", "Unlimited members", "Custom terms"] },
   ];
   return (
     <section className="pricing" id="pricing">
@@ -368,9 +372,9 @@ function Pricing() {
                 <span className="amt">{p.price}</span>
                 {p.per && <span className="per">{p.per}</span>}
               </div>
-              <div className="plan-mau">
-                {p.mau.split("\n").map((l,i)=>(<div key={i}>{l}</div>))}
-              </div>
+              <ul className="plan-items">
+                {p.items.map((item, i) => <li key={i}>{item}</li>)}
+              </ul>
               <div className="plan-cta">
                 <a className={"btn " + (p.primary?"btn-primary":"btn-ghost")} href="#cta">{p.cta}</a>
               </div>

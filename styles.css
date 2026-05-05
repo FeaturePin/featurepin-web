@@ -499,7 +499,9 @@ p  { margin: 0; }
 .plan-price { min-height: 56px; }
 .plan-price .amt { font-size: 40px; font-weight: 600; letter-spacing: -0.03em; }
 .plan-price .per { color: var(--fg-dim); font-size: 13px; }
-.plan-mau { font-size: 13.5px; color: var(--fg-muted); line-height: 1.5; min-height: 80px; }
+.plan-items { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.plan-items li { font-size: 13.5px; color: var(--fg-muted); line-height: 1.4; padding-left: 14px; position: relative; }
+.plan-items li::before { content: "–"; position: absolute; left: 0; color: var(--fg-dim); }
 .plan-cta { margin-top: auto; }
 .plan-cta .btn { width: 100%; justify-content: center; }
 .plan-cta .btn-ghost { background: var(--bg); }
