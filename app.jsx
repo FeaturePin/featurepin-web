@@ -30,7 +30,8 @@ function Nav() {
         </a>
         <nav className="nav-links" aria-label="Primary">
           <a className="nav-link" href="#pricing">Pricing</a>
-          <a className="btn btn-primary" href="#cta">Start for free</a>
+          <a className="nav-link" href="https://app.featurepin.com/login">Log in</a>
+          <a className="btn btn-primary" href="https://app.featurepin.com/signup">Start for free</a>
         </nav>
       </div>
     </header>
@@ -53,7 +54,7 @@ function Hero({ variant }) {
             Most features go unnoticed — not because they're bad, but because nobody told your users. FeaturePin fixes that in 5 minutes.
           </p>
           <div className="hero-cta">
-            <a className="btn btn-primary btn-lg" href="#cta">Start for free <span className="arr"><Ic.arr/></span></a>
+            <a className="btn btn-primary btn-lg" href="https://app.featurepin.com/signup">Start for free <span className="arr"><Ic.arr/></span></a>
             <a className="btn btn-ghost btn-lg" href="#how">See how it works</a>
           </div>
           <div className="hero-foot">
@@ -376,7 +377,7 @@ function Pricing() {
                 {p.items.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
               <div className="plan-cta">
-                <a className={"btn " + (p.primary?"btn-primary":"btn-ghost")} href="#cta">{p.cta}</a>
+                <a className={"btn " + (p.primary?"btn-primary":"btn-ghost")} href="https://app.featurepin.com/signup">{p.cta}</a>
               </div>
             </div>
           ))}
@@ -433,7 +434,7 @@ function FinalCTA() {
       <div className="rail final-inner">
         <h2>Your next feature deserves to be seen.</h2>
         <p>Start for free. No credit card required.</p>
-        <a className="btn btn-primary btn-lg" href="#cta">Start for free <span className="arr"><Ic.arr/></span></a>
+        <a className="btn btn-primary btn-lg" href="https://app.featurepin.com/signup">Start for free <span className="arr"><Ic.arr/></span></a>
       </div>
     </section>
   );
