@@ -451,9 +451,8 @@ function Footer() {
         </div>
         <div>© 2026 FeaturePin. All rights reserved.</div>
         <div className="footer-links">
-          <a href="#privacy">Privacy</a>
-          <a href="#terms">Terms</a>
-          <a href="#docs">Docs</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
         </div>
       </div>
     </footer>
