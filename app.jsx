@@ -290,9 +290,18 @@ function How() {
 
         <div className="steps">
           <div className="step">
-            <div className="step-num">01 · SEE IT WORK</div>
-            <h3>Drop a URL. Get 10 announcement drafts.</h3>
-            <p>Give us your features or pricing page URL. We generate 10 ready-to-review announcement drafts instantly.</p>
+            <div className="step-num">01 · INSTALL</div>
+            <h3>Paste one snippet. Engineering involvement: 60 seconds.</h3>
+            <p>One line of JavaScript. Same model as Intercom. Your dev does it once and never touches it again.</p>
+            <div className="step-visual">
+              <pre className="code"><span className="c">{"// add to <head>"}</span>{"\n"}<span className="k">{"<script "}</span>src=<span className="s">"https://sdk.featurepin.com/fp.js"</span>{" "}data-workspace-id=<span className="s">"YOUR_ID"</span><span className="k">{"></script>"}</span></pre>
+            </div>
+          </div>
+
+          <div className="step">
+            <div className="step-num">02 · CREATE</div>
+            <h3>Drop your features URL. Get 10 ready-to-launch drafts.</h3>
+            <p>Give us your changelog or features page. We generate 10 announcement drafts instantly. Pick, edit, done.</p>
             <div className="step-visual">
               <div style={{display:"flex", gap:8, alignItems:"center"}}>
                 <div className="code" style={{flex: 1, padding: "8px 10px", whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis"}}>
@@ -313,18 +322,9 @@ function How() {
           </div>
 
           <div className="step">
-            <div className="step-num">02 · INSTALL</div>
-            <h3>Paste one snippet into your product. That's it.</h3>
-            <p>One line of JavaScript. Same model as Intercom. Engineering involvement: 60 seconds.</p>
-            <div className="step-visual">
-              <pre className="code"><span className="c">{"// add to <head>"}</span>{"\n"}<span className="k">{"<script "}</span>src=<span className="s">"https://cdn.featurepin.com/fp.js"</span>{" "}data-workspace-id=<span className="s">"YOUR_ID"</span><span className="k">{"></script>"}</span></pre>
-            </div>
-          </div>
-
-          <div className="step">
             <div className="step-num">03 · SHIP</div>
             <h3>Launch to all users or a specific segment.</h3>
-            <p>Watch the adoption move. Impressions, clicks, dismissals — in one place.</p>
+            <p>Watch the adoption move. Impressions, clicks, dismissals, all in one place.</p>
             <div className="step-visual">
               <div className="seg" style={{marginBottom: 14}}>
                 <div className={seg==="all"?"on":""} onClick={()=>setSeg("all")}>All users</div>
