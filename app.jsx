@@ -98,7 +98,7 @@ function HeroMockup() {
 
         <div className="pin-modal">
           <span className="pin-tag"><Ic.pin/> New</span>
-          <h4>Bulk export, finally.</h4>
+          <p className="pin-title">Bulk export, finally.</p>
           <p>Select up to 1,000 records and export as CSV in one click.</p>
           <div className="row">
             <button className="pin-btn-primary">Try it</button>

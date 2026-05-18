@@ -251,7 +251,7 @@ p  { margin: 0; }
   padding: 3px 8px; border-radius: 99px;
   margin-bottom: 12px;
 }
-.pin-modal h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.015em; }
+.pin-modal .pin-title { font-size: 16px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.015em; color: var(--fg); }
 .pin-modal p  { font-size: 13px; color: var(--fg-muted); line-height: 1.45; margin-bottom: 14px; }
 .pin-modal .row { display: flex; gap: 8px; }
 .pin-btn-primary {
