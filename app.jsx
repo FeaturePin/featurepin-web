@@ -1,5 +1,6 @@
 /* FeaturePin — landing page */
-const { useState, useEffect, useRef } = React;
+import { useState, useEffect, useRef } from 'react';
+import { useTweaks, TweaksPanel, TweakSection, TweakRadio } from './tweaks-panel.jsx';
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "theme": "light",
@@ -500,4 +501,4 @@ function App() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+export default App;
