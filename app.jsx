@@ -465,18 +465,24 @@ function Footer() {
         <div className="footer-nav">
           <div className="footer-group">
             <div className="footer-label">Product</div>
+            <a href="/feature-adoption-nudges/">Feature adoption nudges</a>
+            <a href="/in-app-announcements/">In-app announcements</a>
+            <a href="/featurepin-vs-userguiding/">FeaturePin vs UserGuiding</a>
+            <a href="/featurepin-vs-beamer/">FeaturePin vs Beamer</a>
             <a href="#pricing">Pricing</a>
-            <a href="https://app.featurepin.com/login">Log in</a>
-            <a href="https://app.featurepin.com/signup">Start for free</a>
           </div>
           <div className="footer-group">
-            <div className="footer-label">SEO pages</div>
-            {SEO_FOOTER_LINKS.map((link) => (
-              <a key={link.href} href={link.href}>{link.label}</a>
-            ))}
+            <div className="footer-label">Industries</div>
+            <a href="/featurepin-for-fintech-saas/">Fintech SaaS</a>
+          </div>
+          <div className="footer-group">
+            <div className="footer-label">Resources</div>
+            <a href="/resources/feature-adoption-guide/">Feature adoption guide</a>
           </div>
           <div className="footer-group">
             <div className="footer-label">Company</div>
+            <a href="https://app.featurepin.com/login">Log in</a>
+            <a href="https://app.featurepin.com/signup">Start for free</a>
             <a href="/privacy/">Privacy</a>
             <a href="/terms/">Terms</a>
           </div>
