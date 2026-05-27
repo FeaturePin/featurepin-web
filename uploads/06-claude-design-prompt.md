@@ -38,13 +38,13 @@ The result should feel like a tool made by someone who cares deeply about craft.
 Sans-serif geometric. Inter or Geist. Clean, readable, modern. Strong typographic hierarchy — the headlines should do the heavy lifting.
 
 **Color palette**
-Minimalist. Two options:
+Minimalist. **Definitive standard: light theme + cyan accent.**
 
-Option A (dark): very dark background (near black), off-white text, one vivid accent color for CTAs and highlights. Think Linear or Raycast.
+- Background: off-white / very light grey (`oklch(0.985 0.002 270)`)
+- Text: near-black (`oklch(0.20 0.008 270)`)
+- Accent: electric cyan (`oklch(0.72 0.16 215)`) — for CTAs, highlights, active borders. One accent only.
 
-Option B (light): off-white or very light grey background, near-black text, one vivid accent color. Think Stripe.
-
-Pick whichever feels more aligned with the brand. The accent color should feel energetic but not aggressive — consider electric cyan, a sharp green, or a warm orange. One accent only.
+> Do not use a dark theme or green accent for FeaturePin. Those were evaluated and discarded during the initial design phase. `data-theme="light"` + `data-accent="cyan"` is the only accepted combination.
 
 **No gradients** — or if used, extremely subtle. No rainbow gradients, no mesh gradients.
 

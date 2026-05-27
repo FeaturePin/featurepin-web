@@ -141,10 +141,13 @@ Format: posts de LinkedIn en primera persona (veu del founder), curts, amb dades
 - Stock photos de gent somrient davant d'ordinadors
 - Dashboards amb 20 KPIs visibles alhora
 
-### Paleta (proposta)
-- **Primari**: negre o gris molt fosc
-- **Accent**: un sol color viu per a CTAs i highlights
+### Paleta — estàndard definitiu: **light + cyan**
+
+- **Tema**: light — fons blanc/gris molt clar (`oklch(0.985…)`), text quasi negre (`oklch(0.20…)`)
+- **Accent**: cyan — `oklch(0.72 0.16 215)` per a CTAs, highlights, borders actius, icones
 - **Tipografia**: sans-serif geomètrica (Inter o Geist) — llegibilitat, modernitat
+
+> **Regla:** tot disseny nou de FeaturePin (landing, pàgines SEO, app) usa `data-theme="light"` + `data-accent="cyan"` per defecte. El dark theme i el green accent van ser opcions descartades durant el disseny inicial — no reutilitzar-les.
 
 ---
 
