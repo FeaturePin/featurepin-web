@@ -465,10 +465,9 @@ function Footer() {
         <div className="footer-nav">
           <div className="footer-group">
             <div className="footer-label">Product</div>
+            <a href="/all-features/">All features</a>
             <a href="/feature-adoption-nudges/">Feature adoption nudges</a>
             <a href="/in-app-announcements/">In-app announcements</a>
-            <a href="/featurepin-vs-userguiding/">FeaturePin vs UserGuiding</a>
-            <a href="/featurepin-vs-beamer/">FeaturePin vs Beamer</a>
             <a href="#pricing">Pricing</a>
           </div>
           <div className="footer-group">
@@ -477,6 +476,8 @@ function Footer() {
           </div>
           <div className="footer-group">
             <div className="footer-label">Resources</div>
+            <a href="/featurepin-vs-userguiding/">FeaturePin vs UserGuiding</a>
+            <a href="/featurepin-vs-beamer/">FeaturePin vs Beamer</a>
             <a href="/resources/feature-adoption-guide/">Feature adoption guide</a>
           </div>
           <div className="footer-group">

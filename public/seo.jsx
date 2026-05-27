@@ -1,6 +1,94 @@
 const { useEffect, useState } = React;
 
 const PAGES = {
+  "all-features": {
+    title: "All FeaturePin Features | In-App Announcements and Nudges",
+    description: "Every FeaturePin feature in one place: in-app announcements, behavioral nudges, no-code targeting, and a lightweight SDK that installs in one snippet.",
+    canonical: "https://featurepin.com/all-features/",
+    kind: "Product",
+    crumb: ["Product", "All features"],
+    h1prefix: "Everything",
+    h1accent: "FeaturePin does",
+    lede: "Two jobs, done well. No product tours, no session replay, no NPS surveys. Just announcements and nudges, with the targeting and analytics you need to know they worked.",
+    meta: [
+      ["Updated", "May 2026"],
+      ["For", "Product Managers, founders"],
+      ["Setup", "5 minutes"],
+    ],
+    intro: "FeaturePin does two things and stops there. That is not a limitation — it is the product decision. Every feature listed here exists to help you launch updates inside your product and follow up with users who still have not acted on them. Nothing else ships until customers ask for it.",
+    sections: [
+      {
+        id: "announce",
+        title: "Announce mode",
+        body: [
+          { kind: "p", text: "Create an in-app message and launch it to your users without writing a line of code. Choose modal, banner, or tooltip depending on how much attention the update deserves." },
+          { kind: "modular", items: [
+            { num: "01", title: "Modal", body: "Full-focus overlay. Best for major releases, billing changes, or anything every active user must see once." },
+            { num: "02", title: "Banner", body: "Persistent top bar. Best for broad visibility without interrupting the user mid-task." },
+            { num: "03", title: "Tooltip", body: "Contextual pointer attached to a specific element. Best for feature-level hints tied to a button or section." },
+          ]},
+          { kind: "callout", title: "No engineering after install", text: "Once the SDK snippet is in your product, PMs write, target, and launch every campaign from the FeaturePin dashboard. Engineering is never on the critical path again." },
+        ],
+      },
+      {
+        id: "nudge",
+        title: "Nudge mode",
+        body: [
+          { kind: "p", text: "A nudge is a conditional message that fires only when a user still has not tried a feature. Set the rule once. FeaturePin evaluates it automatically every 15 minutes." },
+          { kind: "ol", items: [
+            "Choose the feature area by URL pattern.",
+            "Set the inactivity window (e.g. 14 days since last visit).",
+            "Pick the message type and write the copy.",
+            "Activate — FeaturePin handles the rest.",
+          ]},
+          { kind: "p", text: "Nudges stop showing the moment the user visits the feature. No repeated messages, no manual cleanup." },
+        ],
+      },
+      {
+        id: "targeting",
+        title: "Targeting and segmentation",
+        body: [
+          { kind: "modular", items: [
+            { num: "01", title: "All users", body: "Launch to everyone in your workspace at once. Good for launches and policy updates." },
+            { num: "02", title: "URL-based", body: "Show the message only on specific pages or sections. No DOM selectors needed — FeaturePin uses URL patterns." },
+            { num: "03", title: "Property-based", body: "Target by user properties you pass through the SDK: plan, role, signup date, or any custom attribute." },
+            { num: "04", title: "Inactivity rule", body: "Trigger only for users who have not visited a section in N days. The core nudge condition." },
+          ]},
+        ],
+      },
+      {
+        id: "sdk",
+        title: "SDK and install",
+        body: [
+          { kind: "p", text: "One script tag. That is the entire install. The SDK is under 10KB gzip, loads asynchronously, and never blocks your page render." },
+          { kind: "callout", title: "What the SDK does", text: "It identifies your users, polls for active campaigns every 30 seconds, renders the message when a rule matches, and sends impression, click, and dismiss events back in a batch." },
+          { kind: "p", text: "Authentication uses your workspace ID — a public token that lives in the client. No secrets in the frontend." },
+        ],
+      },
+      {
+        id: "analytics",
+        title: "Campaign analytics",
+        body: [
+          { kind: "p", text: "Every campaign tracks three events: impression (user saw it), click (user acted on the CTA), and dismiss (user closed it). That is enough to know whether the message worked." },
+          { kind: "stat", num: "3", label: "events per campaign — impression, click, dismiss. Enough signal to measure adoption impact without a heavier analytics footprint." },
+        ],
+      },
+      {
+        id: "pricing",
+        title: "Pricing model",
+        body: [
+          { kind: "p", text: "FeaturePin charges by monthly active users — the users your SDK identifies in a 30-day window. Free up to 1,000 MAU with FeaturePin branding. Grow removes branding at $29/month for up to 10,000 MAU. Scale covers up to 25,000 MAU at $79/month." },
+          { kind: "p", text: "No trials. No demos. No negotiations. Start free and upgrade when you grow past the limit." },
+          { kind: "solve" },
+        ],
+      },
+    ],
+    related: [
+      { href: "/feature-adoption-nudges/", kind: "Use case", title: "Feature adoption nudges", desc: "Deep dive into the nudge rule engine and when to use it." },
+      { href: "/in-app-announcements/", kind: "Use case", title: "In-app announcements", desc: "When to use modal, banner, or tooltip for your launch." },
+      { href: "/resources/feature-adoption-guide/", kind: "Guide", title: "Feature adoption guide", desc: "The metrics and tactics behind a complete adoption strategy." },
+    ],
+  },
   "feature-adoption-nudges": {
     title: "Feature Adoption Nudges for SaaS | FeaturePin",
     description: "Learn how feature adoption nudges help SaaS teams get users to notice and try shipped features without engineering work every release.",
