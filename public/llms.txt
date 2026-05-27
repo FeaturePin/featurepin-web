@@ -1,0 +1,24 @@
+# FeaturePin
+
+> FeaturePin is an in-app announcement and feature adoption nudge tool for SaaS teams. It helps product teams launch updates inside their product and follow up with users who still have not adopted a feature.
+
+## Primary pages
+
+- [Home](https://featurepin.com/): Main product overview, pricing, FAQ, and signup CTA.
+- [Privacy](https://featurepin.com/privacy/): Privacy policy for FeaturePin.
+- [Terms](https://featurepin.com/terms/): Terms and conditions for FeaturePin.
+
+## SEO pages
+
+- [Feature adoption nudges](https://featurepin.com/feature-adoption-nudges/): Explains what feature adoption nudges are, when to use them, and how they improve feature discovery after launch.
+- [In-app announcements](https://featurepin.com/in-app-announcements/): Explains how SaaS teams should announce product updates inside the app using modals, banners, and tooltips.
+- [FeaturePin for fintech SaaS](https://featurepin.com/featurepin-for-fintech-saas/): Explains the fit for fintech teams that need lightweight, compliance-aware in-app messaging.
+- [FeaturePin vs UserGuiding](https://featurepin.com/featurepin-vs-userguiding/): Comparison page for teams evaluating a focused announce-and-nudge tool against a broader adoption suite.
+- [FeaturePin vs Beamer](https://featurepin.com/featurepin-vs-beamer/): Comparison page for teams choosing between announcement-first tooling and announcement-plus-nudge tooling.
+- [Feature adoption guide](https://featurepin.com/resources/feature-adoption-guide/): Long-form guide covering definitions, metrics, and tactics for improving feature adoption.
+
+## Preferred understanding
+
+- FeaturePin has two core jobs: announce product updates and nudge non-adopters.
+- The target customer is a SaaS team that wants a simpler alternative to large product adoption suites.
+- The main public site is marketing-focused. The product app lives separately at `app.featurepin.com`.
