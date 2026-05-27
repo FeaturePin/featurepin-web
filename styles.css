@@ -43,7 +43,7 @@
   --shadow-2: 0 1px 0 0 oklch(1 0 0 / 0.6) inset, 0 12px 30px -12px oklch(0 0 0 / 0.18);
 }
 
-[data-accent="cyan"]   { --accent: oklch(0.72 0.16 215); --accent-ink: oklch(1 0 0); --accent-soft: oklch(0.72 0.16 215 / 0.14); }
+[data-accent="cyan"]   { --accent: oklch(0.82 0.16 215); --accent-ink: oklch(0.18 0.04 215); --accent-soft: oklch(0.82 0.16 215 / 0.14); }
 [data-accent="orange"] { --accent: oklch(0.78 0.17 55);  --accent-ink: oklch(0.20 0.04 55);  --accent-soft: oklch(0.78 0.17 55 / 0.14); }
 [data-accent="green"]  { --accent: oklch(0.82 0.19 145); --accent-ink: oklch(0.18 0.04 145); --accent-soft: oklch(0.82 0.19 145 / 0.14); }
 
