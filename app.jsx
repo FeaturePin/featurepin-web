@@ -7,6 +7,15 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "heroVariant": "mockup"
 }/*EDITMODE-END*/;
 
+const SEO_FOOTER_LINKS = [
+  { href: "/feature-adoption-nudges/", label: "Feature adoption nudges" },
+  { href: "/in-app-announcements/", label: "In-app announcements" },
+  { href: "/featurepin-vs-userguiding/", label: "FeaturePin vs UserGuiding" },
+  { href: "/featurepin-vs-beamer/", label: "FeaturePin vs Beamer" },
+  { href: "/featurepin-for-fintech-saas/", label: "FeaturePin for fintech SaaS" },
+  { href: "/resources/feature-adoption-guide/", label: "Feature adoption guide" },
+];
+
 /* ---------- tiny inline icons (sharp, geometric — never illustrative) ---------- */
 const Ic = {
   arr: (p) => <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" {...p}><path d="M3 8h10M9 4l4 4-4 4"/></svg>,
@@ -444,16 +453,34 @@ function FinalCTA() {
 function Footer() {
   return (
     <footer className="footer">
-      <div className="rail footer-inner">
-        <div className="logo" style={{fontSize: 14}}>
-          <span className="logo-mark" aria-hidden="true"></span>
-          <span>FeaturePin</span>
+      <div className="rail footer-shell">
+        <div className="footer-brand">
+          <div className="logo" style={{fontSize: 14}}>
+            <span className="logo-mark" aria-hidden="true"></span>
+            <span>FeaturePin</span>
+          </div>
+          <p>The in-app announcement and nudge tool for SaaS teams that want adoption without enterprise bloat.</p>
         </div>
-        <div>© 2026 FeaturePin. All rights reserved.</div>
-        <div className="footer-links">
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
+        <div className="footer-nav">
+          <div className="footer-group">
+            <div className="footer-label">Product</div>
+            <a href="#pricing">Pricing</a>
+            <a href="https://app.featurepin.com/login">Log in</a>
+            <a href="https://app.featurepin.com/signup">Start for free</a>
+          </div>
+          <div className="footer-group">
+            <div className="footer-label">SEO pages</div>
+            {SEO_FOOTER_LINKS.map((link) => (
+              <a key={link.href} href={link.href}>{link.label}</a>
+            ))}
+          </div>
+          <div className="footer-group">
+            <div className="footer-label">Company</div>
+            <a href="/privacy/">Privacy</a>
+            <a href="/terms/">Terms</a>
+          </div>
         </div>
+        <div className="footer-meta">© 2026 FeaturePin. All rights reserved.</div>
       </div>
     </footer>
   );

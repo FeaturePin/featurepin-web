@@ -1,379 +1,490 @@
-/* FeaturePin — SEO page template */
-const { useState, useEffect, useRef } = React;
-
-const SEO_TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "theme": "dark",
-  "accent": "green",
-  "pageType": "use-case",
-  "format": "long-form"
-}/*EDITMODE-END*/;
-
-/* ---------- Page content for each type ---------- */
-/* Each entry is the realistic copy for one SEO page in that category.
-   Sections are an array of {id, title, body} blocks rendered as prose. */
+const { useEffect, useState } = React;
 
 const PAGES = {
-  "use-case": {
+  "feature-adoption-nudges": {
+    title: "Feature Adoption Nudges for SaaS | FeaturePin",
+    description: "Learn how feature adoption nudges help SaaS teams get users to notice and try shipped features without engineering work every release.",
+    canonical: "https://featurepin.com/feature-adoption-nudges/",
     kind: "Use case",
     crumb: ["Use cases", "Feature adoption nudges"],
     h1prefix: "Feature adoption",
     h1accent: "nudges",
-    lede: "Detect users who haven't tried a feature and reach them automatically — inside your product, without writing code or shipping releases.",
+    lede: "Reach users who still have not tried a feature, inside your product, at the exact moment a reminder can change the outcome.",
     meta: [
       ["Reading time", "6 min"],
-      ["Updated", "Apr 2026"],
-      ["For", "Product Managers, CEOs"],
+      ["Updated", "May 2026"],
+      ["For", "Product Managers, founders"],
     ],
-    intro: "Half the features your team ships will never be discovered. Not because they're bad — because nobody walked your users to the door. A nudge is the smallest possible thing that can change that: one in-app message, shown to one user, at the moment they need it.",
+    intro: "Most features do not fail because they are weak. They fail because the team ships them, posts a changelog, and assumes users will connect the dots on their own. A feature adoption nudge fixes that gap with one simple rule: when the right user misses the right feature, show a short in-app message and move them one step closer to first use.",
     sections: [
       {
-        id: "what-is-a-nudge",
-        title: "What a nudge actually is",
+        id: "what-it-is",
+        title: "What a feature adoption nudge actually is",
         body: [
-          { kind: "p", text: "A nudge is a tiny, conditional in-app message: a tooltip, a banner, a modal — triggered when a specific user does (or doesn't do) something. It is not an email. It is not a release note. It happens inside your product, at the exact moment a user could benefit from it." },
-          { kind: "p", text: "The key word is conditional. A broadcast announcement reaches everyone equally; a nudge only reaches users who haven't yet tried the thing. That's the entire point." },
-          { kind: "callout", title: "The 14-day rule", text: "If a user hasn't touched a feature 14 days after launch, they are statistically unlikely to ever try it on their own. A nudge is what closes that gap." },
+          { kind: "p", text: "A feature adoption nudge is a conditional in-app message tied to a specific user state. It can be a tooltip on a button, a banner on a page, or a modal after login. The important part is not the format. The important part is that it appears only when the user still has not tried the feature." },
+          { kind: "p", text: "That makes nudges different from announcements. Announcements tell everyone that something exists. Nudges focus on the people who missed it." },
+          { kind: "callout", title: "Simple rule, strong effect", text: "If a user has not visited a feature area in 14 days, remind them in context instead of waiting for them to discover it alone." },
         ],
       },
       {
-        id: "why-it-matters",
-        title: "Why feature adoption is the metric nobody watches",
+        id: "why-teams-need-them",
+        title: "Why SaaS teams need them",
         body: [
-          { kind: "p", text: "Engineering tracks ship velocity. Sales tracks revenue. Support tracks tickets. The number of users who actually adopt a new feature gets buried in a dashboard nobody opens — until a quarterly review, when someone asks why the latest big release didn't move retention." },
-          { kind: "stat", num: "12%", label: "is the median feature adoption rate three weeks post-launch across SaaS products under 80 employees. The top quartile sits at 47%. The difference is almost always communication, not product." },
-          { kind: "p", text: "The features themselves are usually fine. What's missing is the part where you tell your users they exist, then remind the users who didn't notice." },
+          { kind: "p", text: "Most SaaS teams track releases and revenue far better than they track whether new capabilities were actually adopted. By the time someone notices that a launch underperformed, the team has already moved on to the next sprint." },
+          { kind: "stat", num: "14 days", label: "is the rough window after launch when a user either discovers a feature or starts ignoring it permanently." },
+          { kind: "p", text: "A nudge gives you a second chance without asking engineering to hard-code custom prompts every time the roadmap ships something new." },
         ],
       },
       {
-        id: "how-it-works",
-        title: "How a nudge gets built",
+        id: "how-to-build-one",
+        title: "How to build a nudge that gets used",
         body: [
-          { kind: "p", text: "There are three honest ways to do this:" },
           { kind: "ol", items: [
-            "Have engineering build it custom every time. Three to four weeks per feature, plus maintenance. Most teams do this once, regret it, and stop.",
-            "Buy an enterprise platform. You get nudges, plus session replay, knowledge base, AI assistant, and a $1,500/month bill. The PM uses 8% of it.",
-            "Define the rule once and let a small tool do the rest. This is what FeaturePin does.",
+            "Pick a feature with low adoption but clear value.",
+            "Define who should see the nudge and who should never see it.",
+            "Choose one in-product surface close to the action.",
+            "Write copy that is specific, short, and useful.",
           ]},
-          { kind: "h3", text: "The rule" },
-          { kind: "p", text: "A nudge rule is one sentence: if a user has not visited /billing/exports in 14 days, show a tooltip on #export-button. You write it once. The tool watches. When the condition is true, the nudge fires." },
+          { kind: "h3", text: "The rule is the product" },
+          { kind: "p", text: "The best nudges are barely noticeable until they are needed. Example: if a user has not used exports after two weeks, show a tooltip on the export trigger the next time they are on the reporting page." },
+          { kind: "solve" },
+        ],
+      },
+      {
+        id: "patterns",
+        title: "Patterns worth copying",
+        body: [
+          { kind: "modular", items: [
+            { num: "01", title: "The reactivation nudge", body: "For users who logged in several times since launch but still ignored the feature." },
+            { num: "02", title: "The empty-state nudge", body: "For sections where an unused feature is the most obvious next action." },
+            { num: "03", title: "The plan-aware nudge", body: "For paid capabilities where only eligible users should see the message." },
+            { num: "04", title: "The context nudge", body: "For moments when a user is already doing the task your new feature improves." },
+          ]},
+        ],
+      },
+      {
+        id: "mistakes",
+        title: "Mistakes that make nudges annoying",
+        body: [
+          { kind: "ul", items: [
+            "Showing the same nudge to users who already adopted the feature.",
+            "Using modal copy for a tooltip and forcing users to read too much.",
+            "Launching several nudges in the same session and competing with yourself.",
+            "Treating every feature like a company-wide event.",
+          ]},
+          { kind: "blockquote", text: "If your nudge feels like marketing, it will be ignored like marketing.", cite: "FeaturePin rule of thumb" },
+        ],
+      },
+    ],
+    related: [
+      { href: "/in-app-announcements/", kind: "Use case", title: "In-app announcements", desc: "When the message should go to everyone, not only non-adopters." },
+      { href: "/featurepin-vs-userguiding/", kind: "Compare", title: "FeaturePin vs UserGuiding", desc: "What changes when you only need announcements and nudges." },
+      { href: "/resources/feature-adoption-guide/", kind: "Guide", title: "Feature adoption guide", desc: "Definitions, benchmarks, and the four levers that move adoption." },
+    ],
+  },
+  "in-app-announcements": {
+    title: "In-App Announcements for SaaS Products | FeaturePin",
+    description: "Use in-app announcements to ship updates where users actually see them, with modals, banners, and tooltips that do not require engineering for every launch.",
+    canonical: "https://featurepin.com/in-app-announcements/",
+    kind: "Use case",
+    crumb: ["Use cases", "In-app announcements"],
+    h1prefix: "In-app",
+    h1accent: "announcements",
+    lede: "Launch product updates inside your SaaS, where people are already working, instead of hoping they open an email or read a changelog later.",
+    meta: [
+      ["Reading time", "5 min"],
+      ["Updated", "May 2026"],
+      ["For", "Product, growth, customer success"],
+    ],
+    intro: "An in-app announcement is the fastest way to make a shipped feature visible. It meets the user inside the product, not in a crowded inbox, not in a release notes page, and not in a Slack thread your customers will never read. For small SaaS teams, that difference is usually what turns a launch from invisible into obvious.",
+    sections: [
+      {
+        id: "why-it-works",
+        title: "Why in-app announcements work better than email alone",
+        body: [
+          { kind: "p", text: "Users ignore a lot of product communication because it arrives outside the moment of use. In-app announcements fix that by showing the update while the user is already logged in and oriented inside your product." },
+          { kind: "ul", items: [
+            "Better visibility than email for routine product updates.",
+            "Less friction than asking engineering to code launch-specific UI.",
+            "Faster iteration when the copy or targeting needs to change.",
+          ]},
+        ],
+      },
+      {
+        id: "choose-the-format",
+        title: "Choose the right format",
+        body: [
+          { kind: "modular", items: [
+            { num: "01", title: "Modal", body: "Best for major launches or changes every active user should see once." },
+            { num: "02", title: "Banner", body: "Best for broad visibility without stopping the user mid-task." },
+            { num: "03", title: "Tooltip", body: "Best for feature-level messages tied to a specific element or action." },
+          ]},
+          { kind: "p", text: "The wrong announcement format is often worse than no announcement. A modal for a tiny polish update creates friction. A tooltip for a critical billing change gets missed." },
+        ],
+      },
+      {
+        id: "copy",
+        title: "How to write announcement copy",
+        body: [
+          { kind: "p", text: "State what changed, why it matters, and what to do next. That is enough. You do not need a launch speech." },
+          { kind: "ol", items: [
+            "Lead with the practical change.",
+            "Keep the body to one short paragraph.",
+            "Use one CTA if action matters, otherwise let users dismiss and continue.",
+          ]},
+        ],
+      },
+      {
+        id: "when-to-announce",
+        title: "When announcements are enough, and when they are not",
+        body: [
+          { kind: "p", text: "Announcements are ideal when everyone should hear the message. They are not enough when you care about the subset of users who still did nothing after seeing it." },
+          { kind: "p", text: "That is where nudges take over. Announce first. Nudge later. The combination is usually stronger than either tactic alone." },
           { kind: "solve" },
         ],
       },
       {
         id: "examples",
-        title: "Three nudges worth stealing",
-        body: [
-          { kind: "p", text: "Patterns that consistently outperform — across analytics, billing, and collaboration tools." },
-          { kind: "modular", items: [
-            { num: "01", title: "The reactivator", body: "Shown to users who logged in but skipped the new feature for 14 days. Inline tooltip on the relevant nav item. Median lift: +28%." },
-            { num: "02", title: "The contextual hint", body: "Fires when a user is doing the thing the new feature improves. Example: showing 'Try bulk export' the moment a user selects 6+ rows." },
-            { num: "03", title: "The empty-state push", body: "When a user lands on a section that's empty, suggest the feature that fills it. High intent, low intrusion." },
-            { num: "04", title: "The plan-aware nudge", body: "Show only to users on plans where the feature is available. Don't tease. Don't frustrate paid users with locked CTAs." },
-          ]},
-        ],
-      },
-      {
-        id: "anti-patterns",
-        title: "What not to do",
+        title: "Examples of solid in-app announcements",
         body: [
           { kind: "ul", items: [
-            "Don't show every announcement as a modal. Modals interrupt. Most updates deserve a banner or a tooltip.",
-            "Don't fire nudges to users who are clearly already using the feature. Check the condition, then check it again.",
-            "Don't stack four messages in one session. Pick one. The rest can wait a week.",
-            "Don't write copy in marketing voice. Users are inside your product, mid-task. Be brief, be useful, get out.",
+            "A modal for a new billing export that saves finance teams manual work.",
+            "A banner for pricing or policy updates that need broad awareness.",
+            "A tooltip on a new sidebar section after a navigation redesign.",
           ]},
-          { kind: "blockquote", text: "If the user has to read your nudge twice, the nudge is too long.", cite: "— Internal rule" },
-        ],
-      },
-      {
-        id: "getting-started",
-        title: "Getting started in 5 minutes",
-        body: [
-          { kind: "p", text: "There's no faster way to validate this than to try it on one feature you already shipped. Pick a feature with low adoption. Define one rule. Watch what happens to the number." },
-          { kind: "p", text: "If the number doesn't move, the feature was the problem. If it does, you just bought yourself a tool that compounds every time you ship." },
         ],
       },
     ],
+    related: [
+      { href: "/feature-adoption-nudges/", kind: "Use case", title: "Feature adoption nudges", desc: "The follow-up for users who saw the announcement and still did nothing." },
+      { href: "/featurepin-vs-beamer/", kind: "Compare", title: "FeaturePin vs Beamer", desc: "How announcement-only tools compare when you also want nudges." },
+      { href: "/resources/feature-adoption-guide/", kind: "Guide", title: "Feature adoption guide", desc: "A deeper read on why communication is the bottleneck." },
+    ],
   },
-
-  "industry": {
+  "featurepin-for-fintech-saas": {
+    title: "FeaturePin for Fintech SaaS Teams",
+    description: "Compliance-aware in-app announcements and nudges for fintech SaaS products, without heavyweight product adoption suites.",
+    canonical: "https://featurepin.com/featurepin-for-fintech-saas/",
     kind: "Industry",
     crumb: ["Industries", "Fintech SaaS"],
     h1prefix: "FeaturePin for",
     h1accent: "fintech SaaS",
-    lede: "Compliance-aware in-app messaging for fintech products. No tracking pixels in your UI, no third-party cookies, no surprise GDPR fire drills.",
+    lede: "In-app announcements and nudges for products that need adoption help without signing up for an invasive analytics platform.",
     meta: [
       ["Reading time", "5 min"],
-      ["Updated", "Apr 2026"],
-      ["For", "Heads of Product at fintech SaaS"],
+      ["Updated", "May 2026"],
+      ["For", "Heads of Product, founders"],
     ],
-    intro: "Fintech products live and die by trust. Every script you load gets reviewed. Every cookie gets logged. So why does your in-app messaging tool still ship like it's 2017? FeaturePin runs as a single SDK, no third-party cookies, no behavioural tracking by default.",
+    intro: "Fintech teams do not have much patience for bloated SDKs, vague data collection policies, or long setup projects just to tell users that a feature launched. You still need product adoption. You just need a smaller surface area and a clearer story for security, compliance, and legal review.",
     sections: [
       {
-        id: "the-fintech-problem",
-        title: "Why fintech teams hate most adoption tools",
+        id: "why-fintech-is-different",
+        title: "Why fintech has a different bar",
         body: [
-          { kind: "p", text: "The standard playbook from Userguiding and Pendo: drop a heavy script, log every click, route everything through their cloud, then sell the resulting analytics back to you. For a B2C app that's a tradeoff. For a fintech onboarding flow under PSD2 review, it's a non-starter." },
+          { kind: "p", text: "Fintech products operate in an environment where scripts get reviewed, access controls matter, and customer trust is fragile. That changes the evaluation criteria for any in-app messaging tool." },
           { kind: "ul", items: [
-            "Compliance teams reject scripts that fire third-party cookies.",
-            "Security teams reject scripts that beacon DOM events without explicit consent.",
-            "Product teams need to ship adoption messaging anyway, because banks have features too.",
+            "Security teams want a narrow implementation surface.",
+            "Compliance teams want clarity on what data is collected.",
+            "Product teams still need to improve feature discovery and rollout communication.",
           ]},
         ],
       },
       {
-        id: "what-changes",
+        id: "what-featurepin-does",
         title: "What FeaturePin does differently",
         body: [
-          { kind: "p", text: "We are an in-app messaging tool, not an analytics suite. The SDK ships announcements and nudges. It does not record sessions. It does not fingerprint users. It does not build behavioral profiles you didn't ask for." },
-          { kind: "callout", title: "What we collect", text: "Impressions, clicks, dismissals — per message, anonymized by default. That's the entire telemetry surface. You can disable it if your DPO insists." },
+          { kind: "p", text: "FeaturePin is intentionally narrow. It handles announcements and nudges. It is not trying to be a survey tool, knowledge base, product tour suite, or session replay product." },
+          { kind: "callout", title: "Focused telemetry", text: "The core feedback loop is impressions, clicks, and dismissals, tied to the campaign. Enough to understand adoption, without dragging in a much larger analytics footprint." },
+        ],
+      },
+      {
+        id: "where-it-fits",
+        title: "Where fintech teams use it",
+        body: [
+          { kind: "modular", items: [
+            { num: "01", title: "KYC and onboarding", body: "Prompt users through the next step when a flow stalls." },
+            { num: "02", title: "Plan-aware upgrades", body: "Show premium capabilities only to the customers who can act on them." },
+            { num: "03", title: "Regulatory updates", body: "Communicate product changes that users need to acknowledge or understand." },
+            { num: "04", title: "Reactivation prompts", body: "Bring users back to underused financial workflows after launch." },
+          ]},
+        ],
+      },
+      {
+        id: "review-process",
+        title: "What makes approval easier",
+        body: [
+          { kind: "p", text: "A smaller tool is easier to approve when the answer to 'what does this do?' is simple and consistent. FeaturePin exists to place in-app messages, target them sanely, and report basic campaign outcomes." },
+          { kind: "p", text: "That clarity is often more valuable than an enormous feature list for teams that would never use most of the suite anyway." },
           { kind: "solve" },
         ],
       },
-      {
-        id: "common-uses",
-        title: "What fintech teams ship with FeaturePin",
-        body: [
-          { kind: "modular", items: [
-            { num: "01", title: "Onboarding nudges", body: "Walk new business accounts through KYC, document upload, and first transaction without three engineering tickets." },
-            { num: "02", title: "Regulatory announcements", body: "PSD2, MiCA, jurisdictional changes — communicated in-product, dated, dismissible, archived." },
-            { num: "03", title: "Feature gating by plan", body: "Show an upgrade nudge only to users whose tier doesn't include the feature. No false positives." },
-            { num: "04", title: "Re-verification flows", body: "Trigger a tooltip on the user's profile when their KYC documents are 11 months old." },
-          ]},
-        ],
-      },
-      {
-        id: "compliance",
-        title: "Compliance posture",
-        body: [
-          { kind: "p", text: "We sign DPAs. We host in the EU. We do not subprocess your end-user data to advertising networks. The full list of subprocessors is on a public page that updates the same day a vendor changes." },
-          { kind: "ul", items: [
-            "GDPR-compliant by default. SCCs available for non-EU customers.",
-            "SOC 2 Type II in progress (target Q4 2026). Until then: detailed control documentation on request.",
-            "No third-party cookies. No fingerprinting. No advertising integrations.",
-          ]},
-        ],
-      },
-      {
-        id: "ship",
-        title: "Shipping a first nudge",
-        body: [
-          { kind: "p", text: "If your security review takes six weeks for any new SDK, this one will be the easiest one this year. Single endpoint, single domain, content-security-policy friendly. The full review usually finishes inside a week." },
-        ],
-      },
+    ],
+    related: [
+      { href: "/in-app-announcements/", kind: "Use case", title: "In-app announcements", desc: "The simplest format for launch and compliance communication." },
+      { href: "/featurepin-vs-userguiding/", kind: "Compare", title: "FeaturePin vs UserGuiding", desc: "When a broad platform is heavier than you need." },
+      { href: "/resources/feature-adoption-guide/", kind: "Guide", title: "Feature adoption guide", desc: "A practical framework for deciding what to measure." },
     ],
   },
-
-  "comparison": {
+  "featurepin-vs-userguiding": {
+    title: "FeaturePin vs UserGuiding",
+    description: "Compare FeaturePin and UserGuiding for in-app announcements, nudges, pricing, complexity, and team fit.",
+    canonical: "https://featurepin.com/featurepin-vs-userguiding/",
     kind: "Comparison",
-    crumb: ["Compare", "FeaturePin vs Userguiding"],
+    crumb: ["Compare", "FeaturePin vs UserGuiding"],
     h1prefix: "FeaturePin",
-    h1accent: "vs Userguiding",
-    lede: "Both ship in-app messages. One does it for $174/month with 47 features. The other does it for $29/month with two. Pick based on what you'll actually use.",
+    h1accent: "vs UserGuiding",
+    lede: "Both tools help you communicate inside the product. The real question is whether you need a platform with many jobs or a smaller tool with one clear job.",
     meta: [
-      ["Reading time", "4 min"],
-      ["Updated", "Apr 2026"],
-      ["For", "Product Managers evaluating tools"],
+      ["Reading time", "5 min"],
+      ["Updated", "May 2026"],
+      ["For", "SaaS teams under 80 people"],
     ],
-    intro: "Userguiding is a real product used by real teams. This page is not a takedown. It's a straight read on what each tool does well, where they overlap, and which one fits which team.",
+    intro: "UserGuiding is broader. FeaturePin is narrower. That is not marketing spin, it is the whole buying decision. If your team wants tours, surveys, and a knowledge base, the answer may be UserGuiding. If you mainly need to announce releases and nudge non-adopters, the extra surface area can become cost and operational drag.",
     sections: [
       {
-        id: "tldr",
-        title: "Short version",
+        id: "quick-answer",
+        title: "The short answer",
         body: [
           { kind: "ul", items: [
-            "Userguiding does more. Product tours, surveys, knowledge base, AI assistant, checklists.",
-            "FeaturePin does less. Announcements and behavioral nudges. Faster to install, cheaper to run.",
-            "If your team will use a knowledge base and surveys, Userguiding earns its price.",
-            "If you only want announcements and nudges, FeaturePin is the same job at one-sixth the cost.",
+            "Choose UserGuiding if you want a multi-feature product adoption suite.",
+            "Choose FeaturePin if your primary problem is feature visibility and adoption.",
+            "Choose neither if your product is too early for tooling and basic customer contact still works better than in-app systems.",
           ]},
         ],
       },
       {
-        id: "what-they-share",
+        id: "overlap",
         title: "Where they overlap",
         body: [
-          { kind: "p", text: "Both tools let you create modals, banners, and tooltips without engineering. Both support targeting by user property. Both report impressions, clicks, and dismissals. If you only need this overlap, the deciding factor is price and install time." },
-          { kind: "stat", num: "5×", label: "the difference in monthly cost between Userguiding's entry plan and FeaturePin's Grow plan, for the same MAU bracket and the same announce-and-nudge feature set." },
+          { kind: "p", text: "Both products cover modals, banners, tooltips, and targeting. Both can help a product manager launch messages without engineering for every campaign." },
+          { kind: "stat", num: "$29", label: "is FeaturePin's Grow price for up to 10,000 MAU, aimed at teams that only want the announce-and-nudge layer." },
         ],
       },
       {
-        id: "feature-fit",
-        title: "How to choose",
+        id: "difference",
+        title: "Where the difference shows up",
         body: [
           { kind: "modular", items: [
-            { num: "01", title: "Choose Userguiding if…", body: "You want product tours, in-product surveys, and a built-in knowledge base alongside announcements. You have a Customer Success team that will operate it." },
-            { num: "02", title: "Choose FeaturePin if…", body: "You only want announcements and behavioral nudges. You're a small team. You don't want a tool that takes a week to learn." },
-            { num: "03", title: "Choose neither if…", body: "Your product is mobile-only, or you have under 100 active users. The investment in either tool will outweigh the gain." },
+            { num: "01", title: "Scope", body: "UserGuiding offers tours, surveys, checklists, and more. FeaturePin stays on announcements and nudges." },
+            { num: "02", title: "Complexity", body: "A narrower product usually means faster setup and less internal training." },
+            { num: "03", title: "Cost discipline", body: "If you only use two features, paying for fifteen becomes hard to justify." },
           ]},
+        ],
+      },
+      {
+        id: "how-to-decide",
+        title: "How to decide honestly",
+        body: [
+          { kind: "p", text: "Write down the workflows you will actually run in the next 90 days. If the list is announcements and behavioral nudges, a focused product is likely the better fit. If the list includes guided tours, onboarding checklists, and surveys, a broader suite may earn its place." },
           { kind: "solve" },
         ],
       },
-      {
-        id: "switching",
-        title: "If you're switching from Userguiding",
-        body: [
-          { kind: "p", text: "Most teams that switch keep their announcements as-is and rebuild only the nudges. Tours don't migrate, because we don't ship tours — but we will say honestly that for the messages you actually need, the rebuild takes about an afternoon." },
-        ],
-      },
+    ],
+    related: [
+      { href: "/featurepin-vs-beamer/", kind: "Compare", title: "FeaturePin vs Beamer", desc: "A cleaner comparison if release communication is the main job." },
+      { href: "/feature-adoption-nudges/", kind: "Use case", title: "Feature adoption nudges", desc: "The capability most small SaaS teams actually need after launch day." },
+      { href: "/resources/feature-adoption-guide/", kind: "Guide", title: "Feature adoption guide", desc: "A better framework than feature-count shopping." },
     ],
   },
-
-  "resource": {
-    kind: "Guide",
-    crumb: ["Resources", "Guide to feature adoption"],
-    h1prefix: "The honest guide to",
-    h1accent: "feature adoption",
-    lede: "What feature adoption is, why it's the metric nobody watches until it's too late, and the four moves that fix it without buying a $20K platform.",
+  "featurepin-vs-beamer": {
+    title: "FeaturePin vs Beamer",
+    description: "Compare FeaturePin and Beamer for product announcements, feature adoption nudges, and fit for SMB SaaS teams.",
+    canonical: "https://featurepin.com/featurepin-vs-beamer/",
+    kind: "Comparison",
+    crumb: ["Compare", "FeaturePin vs Beamer"],
+    h1prefix: "FeaturePin",
+    h1accent: "vs Beamer",
+    lede: "If your main job is product announcements, both tools are in the conversation. If you also want behavioral nudges, the split becomes clearer.",
     meta: [
-      ["Reading time", "12 min"],
-      ["Updated", "Apr 2026"],
-      ["By", "FeaturePin team"],
+      ["Reading time", "4 min"],
+      ["Updated", "May 2026"],
+      ["For", "PMs and founders comparing options"],
     ],
-    intro: "This is a long-form piece. It is not a sales pitch with a thin layer of advice on top. The thesis is simple: feature adoption is mostly a communication problem, and most teams solve it backwards by shipping more features instead of telling users about the ones they already have.",
+    intro: "Beamer is well known for changelog-style product communication. FeaturePin is built around the next step after the announcement: helping the people who still did not use the feature. That difference matters more than any visual polish or checklist of secondary options.",
     sections: [
       {
-        id: "definitions",
-        title: "What feature adoption actually means",
+        id: "shared-ground",
+        title: "What both products do well",
         body: [
-          { kind: "p", text: "Feature adoption is the percentage of eligible users who use a specific feature within a defined window after release. Eligible matters: a user on a Free plan can't adopt a feature gated to Scale. The window matters too: 7-day adoption tells a different story than 90-day." },
-          { kind: "p", text: "The number people quote — 'feature adoption is X%' — is almost always one specific definition. Pick yours and write it down. Defending a number that means three different things to three people is how you lose the room in a planning meeting." },
+          { kind: "p", text: "Both tools help SaaS teams communicate launches without rebuilding UI every time. Both reduce dependence on engineering for routine product messaging." },
         ],
       },
       {
-        id: "why-low",
-        title: "Why most features adopt poorly",
+        id: "where-featurepin-wins",
+        title: "Where FeaturePin is stronger",
         body: [
-          { kind: "p", text: "There are four common reasons. In our experience, the first one explains most of it." },
-          { kind: "ol", items: [
-            "Nobody told the users. The release went out, the changelog updated, an email was sent — that's it. The user, mid-task, never saw any of it.",
-            "The feature solves a problem the user didn't know they had. This is rare for SaaS, common for new categories.",
-            "The feature is gated behind a flow the user won't take. Three clicks deep, requires a settings change.",
-            "The feature is bad. This happens. It's the least common cause and the one teams blame first.",
+          { kind: "ul", items: [
+            "Behavioral nudges for users who did not adopt a feature after launch.",
+            "A product position centered on announcements plus nudges, not just release broadcasting.",
+            "A simpler buying story for teams that care more about adoption than changelog presentation.",
           ]},
-          { kind: "stat", num: "67%", label: "of low-adoption features in our sample improved by more than 2× when the team added a single in-app nudge — without changing the feature itself." },
         ],
       },
       {
-        id: "measuring",
-        title: "Measuring without lying to yourself",
+        id: "where-beamer-fits",
+        title: "Where Beamer may fit better",
         body: [
-          { kind: "p", text: "Pick three numbers and watch them per release. Don't pick more. The dashboard with 20 KPIs is the dashboard nobody opens." },
-          { kind: "h3", text: "Number one — eligible-user adoption" },
-          { kind: "p", text: "Of users who could use the feature, what percentage did, in the first 30 days. This is the headline." },
-          { kind: "h3", text: "Number two — repeat usage" },
-          { kind: "p", text: "Of users who tried the feature once, what percentage came back within 14 days. If number one is high but two is low, the feature is discoverable but not sticky." },
-          { kind: "h3", text: "Number three — time to first use" },
-          { kind: "p", text: "Median days between feature release and a user's first interaction. A 3-day median is healthy. A 30-day median means your release process broke somewhere between the engineering team and the user." },
+          { kind: "p", text: "If your main requirement is a strong release feed and announcement layer, and you do not care much about condition-based nudges after the fact, Beamer can still be a sensible fit." },
         ],
       },
       {
-        id: "the-four-moves",
-        title: "The four moves that move adoption",
+        id: "decision-rule",
+        title: "A practical decision rule",
         body: [
-          { kind: "p", text: "Across the products we've seen, four interventions consistently lift adoption without requiring you to rebuild the feature." },
+          { kind: "p", text: "Ask one question: after users see the update, what happens if they still ignore the feature? If that question matters, choose the tool that handles the second move, not only the first." },
+          { kind: "solve" },
+        ],
+      },
+    ],
+    related: [
+      { href: "/in-app-announcements/", kind: "Use case", title: "In-app announcements", desc: "The common layer that both products cover." },
+      { href: "/feature-adoption-nudges/", kind: "Use case", title: "Feature adoption nudges", desc: "The capability that creates separation after the announcement." },
+      { href: "/featurepin-vs-userguiding/", kind: "Compare", title: "FeaturePin vs UserGuiding", desc: "A comparison against a broader adoption suite." },
+    ],
+  },
+  "feature-adoption-guide": {
+    title: "Feature Adoption Guide for SaaS Teams | FeaturePin",
+    description: "A practical guide to feature adoption for SaaS teams, including definitions, benchmarks, and tactics that move usage after launch.",
+    canonical: "https://featurepin.com/resources/feature-adoption-guide/",
+    kind: "Guide",
+    crumb: ["Resources", "Feature adoption guide"],
+    h1prefix: "The practical guide to",
+    h1accent: "feature adoption",
+    lede: "How to define feature adoption, what numbers actually matter, and what to do when a launch gets seen by everyone except the users you built it for.",
+    meta: [
+      ["Reading time", "10 min"],
+      ["Updated", "May 2026"],
+      ["By", "FeaturePin"],
+    ],
+    intro: "Feature adoption is one of the most misunderstood product metrics in SaaS. Teams quote a percentage without defining eligibility, time window, or next action. Then they call the launch a success or failure based on a number nobody aligned on. This guide exists to clean that up.",
+    sections: [
+      {
+        id: "definition",
+        title: "Define the metric before you discuss the result",
+        body: [
+          { kind: "p", text: "Feature adoption is the percentage of eligible users who use a feature within a defined period after release. Eligibility matters because not every user can access every feature. The period matters because 7-day adoption and 90-day adoption answer different questions." },
+          { kind: "p", text: "If you skip the definition, your dashboard becomes a debate instead of a tool." },
+        ],
+      },
+      {
+        id: "numbers",
+        title: "Three numbers worth tracking",
+        body: [
+          { kind: "ol", items: [
+            "Eligible-user adoption: who used it at least once.",
+            "Time to first use: how long it took after launch.",
+            "Repeat usage: whether the feature became part of the workflow.",
+          ]},
+        ],
+      },
+      {
+        id: "why-adoption-stalls",
+        title: "Why adoption stalls after launch",
+        body: [
+          { kind: "p", text: "In many SaaS products, weak adoption is not a feature-quality problem first. It is a distribution problem. Users do not notice the feature, do not understand why it matters, or do not encounter it in the right context." },
+          { kind: "callout", title: "Common failure mode", text: "Teams ship a feature, send one email, and assume silence means understanding. Usually it means the update was missed." },
+        ],
+      },
+      {
+        id: "moves",
+        title: "The four moves that improve adoption",
+        body: [
           { kind: "modular", items: [
-            { num: "01", title: "Announce in-product", body: "Not just email. Not just changelog. A modal, banner, or tooltip inside the product, the next time the user logs in. Median lift: +18 percentage points." },
-            { num: "02", title: "Nudge non-adopters", body: "Two weeks after release, target users who haven't touched the feature with one contextual message. Median lift: +12 points on top of the announcement." },
-            { num: "03", title: "Empty-state suggestions", body: "When a user is in the area the feature affects, surface it. Empty states are free real estate." },
-            { num: "04", title: "Segment by plan", body: "Don't show paid features to free users. Don't tease. The frustration costs more than the conversion gains." },
+            { num: "01", title: "Announce in product", body: "Use a modal, banner, or tooltip where users already work." },
+            { num: "02", title: "Nudge non-adopters", body: "Follow up with users who still did not try the feature." },
+            { num: "03", title: "Use context", body: "Tie the message to the area or task the feature improves." },
+            { num: "04", title: "Respect segments", body: "Do not show irrelevant or unavailable features to the wrong users." },
           ]},
           { kind: "solve" },
         ],
       },
       {
-        id: "vertical-benchmarks",
-        title: "Adoption benchmarks by vertical",
+        id: "close",
+        title: "What to do next",
         body: [
-          { kind: "p", text: "12% sounds low until you see what verticals actually achieve. The number that matters is whether you're above or below median for products like yours." },
-          { kind: "ul", items: [
-            "Analytics & BI: median 22%, top quartile 51%.",
-            "Project management: median 18%, top quartile 44%.",
-            "Fintech SaaS: median 9%, top quartile 31% — gated by compliance flows.",
-            "Developer tools: median 28%, top quartile 60% — engaged audience.",
-          ]},
-          { kind: "callout", title: "Caveat", text: "These numbers are from products under 80 employees with active user bases between 500 and 10,000 MAU. Enterprise products and consumer apps follow different curves." },
+          { kind: "p", text: "Pick one shipped feature with disappointing usage. Define the audience. Announce it properly. Then nudge the users who still missed it. That one experiment will tell you whether your adoption problem is really a communication problem, which it often is." },
         ],
       },
-      {
-        id: "wrap",
-        title: "Wrap",
-        body: [
-          { kind: "p", text: "If you remember one thing: the best time to communicate about a feature is when the user is using your product, not when they're checking email. Almost everything else follows from there." },
-          { kind: "blockquote", text: "Ship less. Make it matter.", cite: "— FeaturePin manifesto" },
-        ],
-      },
+    ],
+    related: [
+      { href: "/feature-adoption-nudges/", kind: "Use case", title: "Feature adoption nudges", desc: "The cleanest mechanism for the second move." },
+      { href: "/in-app-announcements/", kind: "Use case", title: "In-app announcements", desc: "The launch-day layer for broad visibility." },
+      { href: "/featurepin-for-fintech-saas/", kind: "Industry", title: "FeaturePin for fintech SaaS", desc: "A vertical example where approval and adoption both matter." },
     ],
   },
 };
 
-const RELATED = {
-  "use-case": [
-    { kind: "Use case", title: "In-app onboarding", desc: "Walk new users through your product without writing flow code." },
-    { kind: "Use case", title: "Plan upgrade prompts", desc: "Surface the right upsell at the right moment, only to the right users." },
-    { kind: "Guide",    title: "How to measure feature adoption", desc: "The three numbers worth tracking. Skip the rest." },
-  ],
-  "industry": [
-    { kind: "Industry", title: "FeaturePin for analytics SaaS", desc: "Drive feature usage in tools where users live in dashboards all day." },
-    { kind: "Industry", title: "FeaturePin for dev tools", desc: "Reach developers without breaking their flow." },
-    { kind: "Guide",    title: "Compliance-friendly in-app messaging", desc: "What to ask your DPO before installing any SDK." },
-  ],
-  "comparison": [
-    { kind: "Compare",  title: "FeaturePin vs Pendo", desc: "When the enterprise option is overkill." },
-    { kind: "Compare",  title: "FeaturePin vs Beamer", desc: "Beamer announces. We also nudge." },
-    { kind: "Use case", title: "Feature adoption nudges", desc: "The half of the job most tools skip." },
-  ],
-  "resource": [
-    { kind: "Guide",    title: "The 14-day rule", desc: "Why feature adoption stalls after two weeks, and what to do about it." },
-    { kind: "Guide",    title: "Writing in-app copy that works", desc: "Eight lines on tone and length, with examples." },
-    { kind: "Use case", title: "Feature adoption nudges", desc: "The mechanic at the heart of this guide." },
-  ],
-};
+function getPage() {
+  const slug = window.__SEO_PAGE__;
+  return PAGES[slug] || PAGES["feature-adoption-nudges"];
+}
 
-/* ---------- Section renderer ---------- */
+function syncHead(page) {
+  document.title = page.title;
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute("content", page.description);
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", page.canonical);
+}
+
 function ProseSection({ section }) {
   return (
     <section id={section.id}>
       <h2>{section.title}</h2>
-      {section.body.map((b, i) => <Block key={i} block={b} />)}
+      {section.body.map((block, index) => <Block key={index} block={block} />)}
     </section>
   );
 }
 
 function Block({ block }) {
   switch (block.kind) {
-    case "p": return <p>{block.text}</p>;
-    case "h3": return <h3>{block.text}</h3>;
-    case "ul": return <ul>{block.items.map((t, i) => <li key={i}>{t}</li>)}</ul>;
-    case "ol": return <ol>{block.items.map((t, i) => <li key={i}>{t}</li>)}</ol>;
-    case "blockquote": return <blockquote>{block.text}<cite>{block.cite}</cite></blockquote>;
-    case "stat": return (
-      <div className="callout-stat">
-        <div className="num">{block.num}</div>
-        <div className="label">{block.label}</div>
-      </div>
-    );
-    case "callout": return (
-      <aside className="callout">
-        <div className="callout-icon"><SharedIc.info/></div>
-        <div>
-          <div className="callout-title">{block.title}</div>
-          <p>{block.text}</p>
+    case "p":
+      return <p>{block.text}</p>;
+    case "h3":
+      return <h3>{block.text}</h3>;
+    case "ul":
+      return <ul>{block.items.map((item, index) => <li key={index}>{item}</li>)}</ul>;
+    case "ol":
+      return <ol>{block.items.map((item, index) => <li key={index}>{item}</li>)}</ol>;
+    case "blockquote":
+      return <blockquote>{block.text}<cite>{block.cite}</cite></blockquote>;
+    case "stat":
+      return (
+        <div className="callout-stat">
+          <div className="num">{block.num}</div>
+          <div className="label">{block.label}</div>
         </div>
-      </aside>
-    );
-    case "modular": return (
-      <div className="modular-grid">
-        {block.items.map((it, i) => (
-          <div key={i} className="modular-card">
-            <h4><span className="num-tag">{it.num}</span> {it.title}</h4>
-            <p>{it.body}</p>
+      );
+    case "callout":
+      return (
+        <aside className="callout">
+          <div className="callout-icon"><SharedIc.info /></div>
+          <div>
+            <div className="callout-title">{block.title}</div>
+            <p>{block.text}</p>
           </div>
-        ))}
-      </div>
-    );
-    case "solve": return <SolveBlock />;
-    default: return null;
+        </aside>
+      );
+    case "modular":
+      return (
+        <div className="modular-grid">
+          {block.items.map((item) => (
+            <div key={item.num} className="modular-card">
+              <h4><span className="num-tag">{item.num}</span> {item.title}</h4>
+              <p>{item.body}</p>
+            </div>
+          ))}
+        </div>
+      );
+    case "solve":
+      return <SolveBlock />;
+    default:
+      return null;
   }
 }
 
@@ -383,58 +494,43 @@ function SolveBlock() {
       <div className="solve-mark" aria-hidden="true"></div>
       <div>
         <div className="head">How FeaturePin solves it</div>
-        <h4>Two things, both fast.</h4>
-        <p>Announce releases inside your product. Nudge users who didn't notice. Set the rule once, paste a snippet, ship in an afternoon.</p>
+        <h4>Two features, one adoption job.</h4>
+        <p>Announce releases inside your product. Nudge users who did not act. That is the whole system, and for small SaaS teams it is usually enough.</p>
         <div className="row">
-          <a className="btn btn-primary" href="#cta">Start for free <span className="arr"><SharedIc.arr/></span></a>
-          <a className="btn btn-ghost" href="FeaturePin Landing.html">See how it works</a>
+          <a className="btn btn-primary" href="https://app.featurepin.com/signup">Start for free <span className="arr"><SharedIc.arr /></span></a>
+          <a className="btn btn-ghost" href="/">See the product</a>
         </div>
       </div>
     </div>
   );
 }
 
-/* ---------- Modular variant: same content, but each section as a card stack ---------- */
-function ModularSection({ section }) {
-  return (
-    <section id={section.id} className="modular-section">
-      <div className="eyebrow" style={{color: "var(--accent)", marginBottom: 10}}>
-        {section.title}
-      </div>
-      <h2 style={{fontSize: "clamp(22px, 2.4vw, 30px)", letterSpacing: "-0.02em", marginBottom: 20}}>
-        {section.body.find(b=>b.kind==="p")?.text?.split(".")[0] || section.title}.
-      </h2>
-      {section.body.filter(b=>b.kind!=="p" || section.body.indexOf(b)>0).map((b,i)=><Block key={i} block={b}/>)}
-    </section>
-  );
-}
-
-/* ---------- TOC with active section ---------- */
 function TOC({ sections }) {
   const [active, setActive] = useState(sections[0]?.id);
-  useEffect(()=>{
-    const handler = () => {
+
+  useEffect(() => {
+    const onScroll = () => {
       let current = sections[0]?.id;
-      for (const s of sections) {
-        const el = document.getElementById(s.id);
-        if (!el) continue;
-        const rect = el.getBoundingClientRect();
-        if (rect.top < 140) current = s.id;
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+        if (!element) continue;
+        if (element.getBoundingClientRect().top < 140) current = section.id;
       }
       setActive(current);
     };
-    window.addEventListener("scroll", handler, { passive: true });
-    handler();
-    return () => window.removeEventListener("scroll", handler);
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, [sections]);
 
   return (
     <aside className="toc" aria-label="On this page">
       <div className="toc-label">On this page</div>
       <ul>
-        {sections.map(s => (
-          <li key={s.id}>
-            <a href={"#"+s.id} className={active===s.id ? "active" : ""}>{s.title}</a>
+        {sections.map((section) => (
+          <li key={section.id}>
+            <a href={`#${section.id}`} className={active === section.id ? "active" : ""}>{section.title}</a>
           </li>
         ))}
       </ul>
@@ -442,31 +538,30 @@ function TOC({ sections }) {
   );
 }
 
-/* ---------- SEO Hero ---------- */
 function SEOHero({ page }) {
   return (
     <section className="seo-hero">
       <div className="grid-bg" aria-hidden="true"></div>
       <div className="rail">
         <div className="crumb">
-          <a href="FeaturePin Landing.html">FeaturePin</a>
+          <a href="/">FeaturePin</a>
           <span className="sep">/</span>
-          {page.crumb.slice(0, -1).map((c, i) => (
-            <React.Fragment key={i}>
-              <a href="#">{c}</a>
+          {page.crumb.slice(0, -1).map((crumb) => (
+            <React.Fragment key={crumb}>
+              <span>{crumb}</span>
               <span className="sep">/</span>
             </React.Fragment>
           ))}
-          <span className="here">{page.crumb[page.crumb.length-1]}</span>
+          <span className="here">{page.crumb[page.crumb.length - 1]}</span>
         </div>
-        <div style={{marginTop: 22}}>
-          <span className="kind-pill"><span className="dot" style={{width: 6, height: 6, borderRadius: 99, background: "var(--accent)"}}></span>{page.kind}</span>
+        <div style={{ marginTop: 22 }}>
+          <span className="kind-pill"><span className="dot" style={{ width: 6, height: 6, borderRadius: 99, background: "var(--accent)" }}></span>{page.kind}</span>
         </div>
         <h1>{page.h1prefix} <span className="accent">{page.h1accent}</span>.</h1>
         <p className="lede">{page.lede}</p>
         <div className="meta">
-          {page.meta.map(([k, v], i) => (
-            <span key={i}><strong>{k}</strong> · {v}</span>
+          {page.meta.map(([label, value]) => (
+            <span key={label}><strong>{label}</strong> · {value}</span>
           ))}
         </div>
       </div>
@@ -474,22 +569,21 @@ function SEOHero({ page }) {
   );
 }
 
-/* ---------- Related ---------- */
 function Related({ items, kind }) {
   return (
     <section className="related">
       <div className="rail">
-        <div className="section-head" style={{marginBottom: 0}}>
+        <div className="section-head" style={{ marginBottom: 0 }}>
           <div className="eyebrow">Keep reading</div>
-          <h2 style={{fontSize: "clamp(28px, 3.4vw, 40px)"}}>Related {kind === "Guide" ? "guides" : "pages"}.</h2>
+          <h2 style={{ fontSize: "clamp(28px, 3.4vw, 40px)" }}>Related {kind === "Guide" ? "guides" : "pages"}.</h2>
         </div>
         <div className="related-grid">
-          {items.map((r, i) => (
-            <a key={i} className="related-card" href="#">
-              <div className="related-kind">{r.kind}</div>
-              <h4>{r.title}</h4>
-              <p>{r.desc}</p>
-              <div className="arr-row">Read <SharedIc.arr/></div>
+          {items.map((item) => (
+            <a key={item.href} className="related-card" href={item.href}>
+              <div className="related-kind">{item.kind}</div>
+              <h4>{item.title}</h4>
+              <p>{item.desc}</p>
+              <div className="arr-row">Read <SharedIc.arr /></div>
             </a>
           ))}
         </div>
@@ -498,84 +592,49 @@ function Related({ items, kind }) {
   );
 }
 
-/* ---------- Final CTA (compact) ---------- */
 function SEOFinalCTA() {
   return (
     <section className="final" id="cta">
       <div className="rail final-inner">
         <h2>Your next feature deserves to be seen.</h2>
         <p>Start for free. No credit card required.</p>
-        <a className="btn btn-primary btn-lg" href="#cta">Start for free <span className="arr"><SharedIc.arr/></span></a>
+        <a className="btn btn-primary btn-lg" href="https://app.featurepin.com/signup">Start for free <span className="arr"><SharedIc.arr /></span></a>
       </div>
     </section>
   );
 }
 
-/* ---------- App ---------- */
 function SEOApp() {
-  const [tweaks, setTweak] = useTweaks(SEO_TWEAK_DEFAULTS);
+  const page = getPage();
 
-  useEffect(()=>{
-    document.documentElement.setAttribute("data-theme", tweaks.theme);
-    document.documentElement.setAttribute("data-accent", tweaks.accent);
-  }, [tweaks.theme, tweaks.accent]);
-
-  const page = PAGES[tweaks.pageType] || PAGES["use-case"];
-  const related = RELATED[tweaks.pageType] || RELATED["use-case"];
-  const Section = tweaks.format === "modular" ? ModularSection : ProseSection;
-
-  // Force long-form for "resource" — modular doesn't make sense for an article
-  const effectiveSection = tweaks.pageType === "resource" ? ProseSection : Section;
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", "dark");
+    document.documentElement.setAttribute("data-accent", "green");
+    syncHead(page);
+  }, [page]);
 
   return (
-    <div data-screen-label={"SEO — " + page.kind}>
-      <SharedNav/>
+    <div data-screen-label={`SEO - ${page.kind}`}>
+      <SharedNav />
       <main>
-        <SEOHero page={page}/>
+        <SEOHero page={page} />
         <div className="seo-body">
           <div className="rail seo-grid">
             <article className="prose">
-              <p style={{fontSize: "18.5px", color: "var(--fg)", lineHeight: 1.55, marginBottom: "2em"}}>
+              <p style={{ fontSize: "18.5px", color: "var(--fg)", lineHeight: 1.55, marginBottom: "2em" }}>
                 {page.intro}
               </p>
-              {page.sections.map(s => React.createElement(effectiveSection, { key: s.id, section: s }))}
+              {page.sections.map((section) => <ProseSection key={section.id} section={section} />)}
             </article>
-            <TOC sections={page.sections}/>
+            <TOC sections={page.sections} />
           </div>
         </div>
-        <Related items={related} kind={page.kind}/>
-        <SEOFinalCTA/>
+        <Related items={page.related} kind={page.kind} />
+        <SEOFinalCTA />
       </main>
-      <SharedFooter/>
-
-      <TweaksPanel title="Tweaks">
-        <TweakSection title="Page type">
-          <TweakRadio value={tweaks.pageType} onChange={(v)=>setTweak("pageType", v)}
-            options={[
-              {value:"use-case", label:"Use case"},
-              {value:"industry", label:"Industry"},
-              {value:"comparison", label:"Compare"},
-              {value:"resource", label:"Guide"},
-            ]} />
-        </TweakSection>
-        <TweakSection title="Format">
-          <TweakRadio value={tweaks.format} onChange={(v)=>setTweak("format", v)}
-            options={[
-              {value:"long-form", label:"Long-form"},
-              {value:"modular", label:"Modular"},
-            ]} />
-        </TweakSection>
-        <TweakSection title="Theme">
-          <TweakRadio value={tweaks.theme} onChange={(v)=>setTweak("theme", v)}
-            options={[{value:"dark", label:"Dark"}, {value:"light", label:"Light"}]} />
-        </TweakSection>
-        <TweakSection title="Accent">
-          <TweakRadio value={tweaks.accent} onChange={(v)=>setTweak("accent", v)}
-            options={[{value:"green", label:"Green"}, {value:"cyan", label:"Cyan"}, {value:"orange", label:"Orange"}]} />
-        </TweakSection>
-      </TweaksPanel>
+      <SharedFooter />
     </div>
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<SEOApp/>);
+ReactDOM.createRoot(document.getElementById("root")).render(<SEOApp />);
