@@ -608,8 +608,8 @@ function SEOApp() {
   const page = getPage();
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "dark");
-    document.documentElement.setAttribute("data-accent", "green");
+    document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.setAttribute("data-accent", "cyan");
     syncHead(page);
   }, [page]);
 
