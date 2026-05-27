@@ -1,24 +1,31 @@
-/* Shared components: Nav, Footer, Icons */
 const SharedIc = {
   arr: (p) => <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" {...p}><path d="M3 8h10M9 4l4 4-4 4"/></svg>,
   pin: (p) => <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" {...p}><rect x="3.2" y="3.2" width="9.6" height="9.6" rx="1.6" transform="rotate(45 8 8)"/><circle cx="8" cy="8" r="1.6" fill="currentColor" stroke="none"/></svg>,
-  bolt: (p) => <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" {...p}><path d="M9 1L3 9h4l-1 6 6-8H8l1-6z"/></svg>,
   info: (p) => <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5" {...p}><circle cx="8" cy="8" r="6"/><path d="M8 7v4M8 5v0.5"/></svg>,
-  check: (p) => <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" {...p}><path d="M3 8.5l3 3 7-7"/></svg>,
 };
 
-function SharedNav({ activePath = "/" }) {
+const SEO_FOOTER_LINKS = [
+  { href: "/feature-adoption-nudges/", label: "Feature adoption nudges" },
+  { href: "/in-app-announcements/", label: "In-app announcements" },
+  { href: "/featurepin-vs-userguiding/", label: "FeaturePin vs UserGuiding" },
+  { href: "/featurepin-vs-beamer/", label: "FeaturePin vs Beamer" },
+  { href: "/featurepin-for-fintech-saas/", label: "FeaturePin for fintech SaaS" },
+  { href: "/resources/feature-adoption-guide/", label: "Feature adoption guide" },
+];
+
+function SharedNav() {
   return (
     <header className="nav">
       <div className="rail nav-inner">
-        <a href="FeaturePin Landing.html" className="logo">
+        <a href="/" className="logo">
           <span className="logo-mark" aria-hidden="true"></span>
           <span>FeaturePin</span>
         </a>
         <nav className="nav-links" aria-label="Primary">
-          <a className="nav-link" href="FeaturePin Landing.html#pricing">Pricing</a>
-          <a className="nav-link" href="#docs">Docs</a>
-          <a className="btn btn-primary" href="#cta">Start for free</a>
+          <a className="nav-link" href="/#pricing">Pricing</a>
+          <a className="nav-link" href="/resources/feature-adoption-guide/">Resources</a>
+          <a className="nav-link" href="https://app.featurepin.com/login">Log in</a>
+          <a className="btn btn-primary" href="https://app.featurepin.com/signup">Start for free</a>
         </nav>
       </div>
     </header>
@@ -28,20 +35,37 @@ function SharedNav({ activePath = "/" }) {
 function SharedFooter() {
   return (
     <footer className="footer">
-      <div className="rail footer-inner">
-        <div className="logo" style={{fontSize: 14}}>
-          <span className="logo-mark" aria-hidden="true"></span>
-          <span>FeaturePin</span>
+      <div className="rail footer-shell">
+        <div className="footer-brand">
+          <div className="logo" style={{ fontSize: 14 }}>
+            <span className="logo-mark" aria-hidden="true"></span>
+            <span>FeaturePin</span>
+          </div>
+          <p>The in-app announcement and nudge tool for SaaS teams that want adoption without enterprise bloat.</p>
         </div>
-        <div>© 2026 FeaturePin. All rights reserved.</div>
-        <div className="footer-links">
-          <a href="#privacy">Privacy</a>
-          <a href="#terms">Terms</a>
-          <a href="#docs">Docs</a>
+        <div className="footer-nav">
+          <div className="footer-group">
+            <div className="footer-label">Product</div>
+            <a href="/#pricing">Pricing</a>
+            <a href="https://app.featurepin.com/login">Log in</a>
+            <a href="https://app.featurepin.com/signup">Start for free</a>
+          </div>
+          <div className="footer-group">
+            <div className="footer-label">SEO pages</div>
+            {SEO_FOOTER_LINKS.map((link) => (
+              <a key={link.href} href={link.href}>{link.label}</a>
+            ))}
+          </div>
+          <div className="footer-group">
+            <div className="footer-label">Company</div>
+            <a href="/privacy/">Privacy</a>
+            <a href="/terms/">Terms</a>
+          </div>
         </div>
+        <div className="footer-meta">© 2026 FeaturePin. All rights reserved.</div>
       </div>
     </footer>
   );
 }
 
-Object.assign(window, { SharedNav, SharedFooter, SharedIc });
+Object.assign(window, { SharedNav, SharedFooter, SharedIc, SEO_FOOTER_LINKS });
