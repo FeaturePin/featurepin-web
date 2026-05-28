@@ -1,6 +1,7 @@
 .vercel
 .gstack/
 *.png
-
-dist/
 node_modules/
+.next/
+next-env.d.ts
+uploads/
