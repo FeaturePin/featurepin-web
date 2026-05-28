@@ -37,6 +37,7 @@ export default function Footer() {
             <div className="footer-label">Company</div>
             <a href="https://app.featurepin.com/login">Log in</a>
             <a href="https://app.featurepin.com/signup">Start for free</a>
+            <a href="/help/">Help Center</a>
             <a href="/privacy/">Privacy</a>
             <a href="/terms/">Terms</a>
             <CookieSettingsLink />
