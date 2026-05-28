@@ -468,11 +468,15 @@ function Footer() {
             <a href="/all-features/">All features</a>
             <a href="/feature-adoption-nudges/">Feature adoption nudges</a>
             <a href="/in-app-announcements/">In-app announcements</a>
+            <a href="/campaign-analytics/">Campaign analytics</a>
             <a href="#pricing">Pricing</a>
           </div>
           <div className="footer-group">
             <div className="footer-label">Industries</div>
             <a href="/featurepin-for-fintech-saas/">Fintech SaaS</a>
+            <a href="/featurepin-for-hr-saas/">HR SaaS</a>
+            <a href="/featurepin-for-marketing-saas/">Marketing SaaS</a>
+            <a href="/featurepin-for-devtools/">DevTools</a>
           </div>
           <div className="footer-group">
             <div className="footer-label">Resources</div>

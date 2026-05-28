@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-accent="cyan">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>FeaturePin for HR SaaS Teams</title>
+  <meta name="description" content="In-app announcements and nudges for HR software products. Help HR managers discover and adopt new features without overwhelming them with notifications."/>
+  <link rel="canonical" href="https://featurepin.com/featurepin-for-hr-saas/"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' rx='3' stroke='%230ea5e9' stroke-width='2.5' fill='none' transform='rotate(45 16 16)'/%3E%3Crect x='12' y='12' width='8' height='8' rx='2' fill='%230ea5e9'/%3E%3C/svg%3E"/>
+  <link rel="stylesheet" href="/styles.css?v=17"/>
+</head>
+<body>
+<header class="nav">
+  <div class="rail nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span>FeaturePin</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="/#pricing">Pricing</a>
+      <a class="nav-link" href="/resources/feature-adoption-guide/">Resources</a>
+      <a class="nav-link" href="https://app.featurepin.com/login">Log in</a>
+      <a class="btn btn-primary" href="https://app.featurepin.com/signup">Start for free</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="seo-hero">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="rail">
+      <div class="crumb"><a href="/">FeaturePin</a><span class="sep">/</span><span>Industries</span><span class="sep">/</span><span class="here">HR SaaS</span></div>
+      <div style="margin-top:22px">
+        <span class="kind-pill"><span class="dot" style="width:6px;height:6px;border-radius:99px;background:var(--accent);display:inline-block;margin-right:6px"></span>Industry</span>
+      </div>
+      <h1>FeaturePin for <span class="accent">HR SaaS</span>.</h1>
+      <p class="lede">HR teams are busy. Your product communication needs to reach them in the product, at the right moment, without adding to the noise.</p>
+      <div class="meta"><span><strong>Reading time</strong> · 6 min</span><span><strong>Updated</strong> · May 2026</span><span><strong>For</strong> · Heads of Product, founders</span></div>
+    </div>
+  </section>
+  <div class="seo-body">
+    <div class="rail seo-grid">
+      <article class="prose">
+        <p style="font-size:18.5px;color:var(--fg);line-height:1.55;margin-bottom:2em">HR software products face a specific adoption challenge: the people using the tool are HR managers, people ops teams, and finance departments that bought the product to solve a problem, not to explore a feature set. They log in, complete specific tasks, and leave. That means new features sit unused for months unless someone surfaces them in the right moment. FeaturePin is built for exactly that problem: reaching the right user, in the right section of the product, at the right time.</p>
+        <section id="hr-adoption-problem"><h2>The HR software adoption pattern</h2><p>HR SaaS buyers are often evaluating tools on behalf of an organization, not just for personal use. When a new feature launches, the evaluation question shifts: not just &#x27;is the feature useful?&#x27; but also &#x27;will it change how my team works?&#x27; and &#x27;do I need to communicate this to managers?&#x27;. That changes how you need to announce it.</p><p>HR software often has a long tail of features that users have not discovered. Onboarding workflows, automated approval chains, performance review templates, compliance report exports — each was built because someone asked for it, but few users explore the product deeply enough to find them unprompted.</p><div class="callout"><strong>The task-based user problem</strong><p>HR users log in to complete a task: process payroll, update a policy, run a report. They are not browsing. They are not exploring. In-app nudges reach them during the task they are already doing — which is the only moment when a feature discovery message has a real chance of landing.</p></div></section><section id="use-cases-hr"><h2>Where HR teams use FeaturePin</h2><div class="modular-grid"><div class="modular-item"><span class="modular-num">01</span><h4>Policy update acknowledgments</h4><p>Announce policy changes or compliance-required updates with a modal. Show it once to active users and retire it automatically after one impression.</p></div><div class="modular-item"><span class="modular-num">02</span><h4>New workflow discovery</h4><p>When you add a new approval chain or automated workflow, nudge the HR admins who manage those processes. Show the message in the section they are already using.</p></div><div class="modular-item"><span class="modular-num">03</span><h4>Compliance feature adoption</h4><p>Features built for compliance purposes — audit logs, access control updates, GDPR exports — often have low adoption because users did not know they were needed. A targeted announcement reaches the right admins.</p></div><div class="modular-item"><span class="modular-num">04</span><h4>Self-service expansion</h4><p>When you add self-service capabilities that reduce HR team workload, announce them to the managers who benefit most. Fewer tickets, fewer manual processes.</p></div></div></section><section id="hr-specific-targeting"><h2>Targeting in multi-role HR products</h2><p>Most HR SaaS products have multiple user types: HR admins, managers, and employees. Each group has different feature access and different adoption priorities. A feature relevant to an HR admin is invisible to an employee, and vice versa.</p><p>FeaturePin&#x27;s property-based targeting is designed for exactly this scenario. Pass the user&#x27;s role through featurepin.identify() when they log in, and every campaign can be scoped to only the users for whom it is relevant. Employees never see HR admin announcements. Managers only see the features they can use.</p><p>This is especially important for compliance-related announcements, where showing the wrong message to the wrong user creates confusion or raises unnecessary concern. Targeting by role removes that risk entirely and keeps the signal-to-noise ratio high for every user type.</p></section><section id="hr-roi"><h2>The adoption ROI for HR teams</h2><p>For HR software, poor feature adoption has two costs. The first is churn risk: a customer who does not use the features they paid for is a customer who does not renew. The second is support load: users who cannot find a feature submit a support ticket instead of self-serving.</p><p>In-app nudges reduce both costs. A nudge that brings a user to a self-service feature for the first time can eliminate a recurring support ticket permanently. An announcement that correctly surfaces a compliance export feature can prevent a churn conversation from starting.</p><p>HR teams also tend to evaluate tools on breadth of use, not depth. A product that the whole HR team uses for multiple workflows is safer from competitive displacement than one that only the admin uses for one task. Feature adoption nudges are the lowest-friction way to expand usage across the team.</p><div class="solve-box">
+  <p>Ready to try it?</p>
+  <a class="btn btn-primary" href="https://app.featurepin.com/signup">Start for free</a>
+</div></section>
+      </article>
+      <aside class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li><a href="#hr-adoption-problem">The HR software adoption pattern</a></li><li><a href="#use-cases-hr">Where HR teams use FeaturePin</a></li><li><a href="#hr-specific-targeting">Targeting in multi-role HR products</a></li><li><a href="#hr-roi">The adoption ROI for HR teams</a></li></ul></aside>
+    </div>
+  </div>
+  <section class="related">
+  <div class="rail">
+    <div class="section-head" style="margin-bottom:0">
+      <div class="eyebrow">Keep reading</div>
+      <h2 style="font-size:clamp(28px,3.4vw,40px)">Related pages.</h2>
+    </div>
+    <div class="related-grid"><a class="related-card" href="/in-app-announcements/">
+  <div class="related-kind">Use case</div>
+  <h4>In-app announcements</h4>
+  <p>The format for compliance and policy communication.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a><a class="related-card" href="/feature-adoption-nudges/">
+  <div class="related-kind">Use case</div>
+  <h4>Feature adoption nudges</h4>
+  <p>How to surface underused features to the right users.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a><a class="related-card" href="/resources/feature-adoption-guide/">
+  <div class="related-kind">Guide</div>
+  <h4>Feature adoption guide</h4>
+  <p>How to define and measure adoption in a multi-role product.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a></div>
+  </div>
+</section>
+  <section class="final" id="cta">
+    <div class="rail final-inner">
+      <h2>Your next feature deserves to be seen.</h2>
+      <p>Start for free. No credit card required.</p>
+      <a class="btn btn-primary btn-lg" href="https://app.featurepin.com/signup">Start for free <span class="arr"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="rail footer-shell">
+    <div class="footer-brand">
+      <div class="logo" style="font-size:14px">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>FeaturePin</span>
+      </div>
+      <p>The in-app announcement and nudge tool for SaaS teams that want adoption without enterprise bloat.</p>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-group">
+        <div class="footer-label">Product</div>
+        <a href="/all-features/">All features</a>
+        <a href="/feature-adoption-nudges/">Feature adoption nudges</a>
+        <a href="/in-app-announcements/">In-app announcements</a>
+        <a href="/campaign-analytics/">Campaign analytics</a>
+        <a href="/#pricing">Pricing</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Industries</div>
+        <a href="/featurepin-for-fintech-saas/">Fintech SaaS</a>
+        <a href="/featurepin-for-hr-saas/">HR SaaS</a>
+        <a href="/featurepin-for-marketing-saas/">Marketing SaaS</a>
+        <a href="/featurepin-for-devtools/">DevTools</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Resources</div>
+        <a href="/featurepin-vs-userguiding/">FeaturePin vs UserGuiding</a>
+        <a href="/featurepin-vs-beamer/">FeaturePin vs Beamer</a>
+        <a href="/resources/feature-adoption-guide/">Feature adoption guide</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Company</div>
+        <a href="https://app.featurepin.com/login">Log in</a>
+        <a href="https://app.featurepin.com/signup">Start for free</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+    <div class="footer-meta">© 2026 FeaturePin. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

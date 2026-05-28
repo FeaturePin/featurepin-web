@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-accent="cyan">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Campaign Analytics for In-App Messages | FeaturePin</title>
+  <meta name="description" content="Track impressions, click-through rates, and dismiss rates for every in-app announcement and nudge campaign. Know what worked and what to improve."/>
+  <link rel="canonical" href="https://featurepin.com/campaign-analytics/"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' rx='3' stroke='%230ea5e9' stroke-width='2.5' fill='none' transform='rotate(45 16 16)'/%3E%3Crect x='12' y='12' width='8' height='8' rx='2' fill='%230ea5e9'/%3E%3C/svg%3E"/>
+  <link rel="stylesheet" href="/styles.css?v=17"/>
+</head>
+<body>
+<header class="nav">
+  <div class="rail nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span>FeaturePin</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="/#pricing">Pricing</a>
+      <a class="nav-link" href="/resources/feature-adoption-guide/">Resources</a>
+      <a class="nav-link" href="https://app.featurepin.com/login">Log in</a>
+      <a class="btn btn-primary" href="https://app.featurepin.com/signup">Start for free</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="seo-hero">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="rail">
+      <div class="crumb"><a href="/">FeaturePin</a><span class="sep">/</span><span>Product</span><span class="sep">/</span><span class="here">Campaign analytics</span></div>
+      <div style="margin-top:22px">
+        <span class="kind-pill"><span class="dot" style="width:6px;height:6px;border-radius:99px;background:var(--accent);display:inline-block;margin-right:6px"></span>Product</span>
+      </div>
+      <h1>Campaign <span class="accent">analytics</span>.</h1>
+      <p class="lede">Know whether your in-app messages actually worked. Every campaign tracks impressions, clicks, and dismissals — enough signal to measure adoption without a heavier analytics stack.</p>
+      <div class="meta"><span><strong>Updated</strong> · May 2026</span><span><strong>For</strong> · Product Managers, founders</span><span><strong>Included in</strong> · All plans</span></div>
+    </div>
+  </section>
+  <div class="seo-body">
+    <div class="rail seo-grid">
+      <article class="prose">
+        <p style="font-size:18.5px;color:var(--fg);line-height:1.55;margin-bottom:2em">Launching an announcement or nudge is only half the job. The other half is knowing whether it worked. FeaturePin tracks the three events that matter for every campaign — impression, click, dismiss — and presents them in a dashboard designed for product decisions, not data engineering. No SQL, no event schemas to define, no analytics setup beyond the SDK you already installed.</p>
+        <section id="three-events"><h2>The three events that matter</h2><p>FeaturePin tracks three events per campaign. That is a deliberate constraint, not a limitation. More events create more noise. Three events create three clear questions: did the user see it, did the user act on it, and did the user close it without acting?</p><div class="modular-grid"><div class="modular-item"><span class="modular-num">01</span><h4>Impression</h4><p>The campaign was rendered and visible to the user. Logged once per user per campaign — repeat views do not inflate the count.</p></div><div class="modular-item"><span class="modular-num">02</span><h4>Click</h4><p>The user clicked the primary CTA button. For nudges, this is the key conversion signal: the user is going to try the feature.</p></div><div class="modular-item"><span class="modular-num">03</span><h4>Dismiss</h4><p>The user closed the message without clicking the CTA. Useful for understanding awareness without conversion, and for diagnosing copy or targeting problems.</p></div></div><p>The ratio between these three events tells you most of what you need to know. High impressions with low clicks suggests a copy or relevance problem. High dismissals relative to clicks suggests the message is being seen by users who are not ready to act. If impressions are much lower than expected, the targeting condition may be too narrow or the campaign may not be reaching your most active users.</p></section><section id="dashboard"><h2>The analytics dashboard</h2><p>The analytics view in FeaturePin shows impression volume over time, click-through rate, and dismiss rate for each campaign. You can filter by date range — 7, 30, or 90 days — and toggle between the overall summary and a daily breakdown chart.</p><p>The dashboard is designed for product decisions. You should be able to open it, see whether a campaign is performing, and decide in under a minute whether to keep it active, adjust the copy, or pause it. There is no setup required — analytics are on by default for every campaign from the moment it goes live.</p><div class="callout"><strong>No extra SDK calls</strong><p>Analytics events are batched by the SDK and sent automatically. You do not need to instrument anything beyond the initial featurepin.identify() call. Every campaign launched from the dashboard gets full tracking without any additional configuration.</p></div></section><section id="benchmarks"><h2>What good numbers look like</h2><p>Benchmarks vary by format and context, but these ranges are representative of healthy campaigns in typical SaaS products.</p><div class="modular-grid"><div class="modular-item"><span class="modular-num">01</span><h4>Modal impressions</h4><p>70 to 90 percent of active users within the first week for a well-targeted campaign on a major release.</p></div><div class="modular-item"><span class="modular-num">02</span><h4>Banner impressions</h4><p>60 to 80 percent of active users, depending on how often they log in during the campaign window.</p></div><div class="modular-item"><span class="modular-num">03</span><h4>Tooltip nudge CTR</h4><p>15 to 35 percent for a well-targeted, contextually placed nudge. If you are below 10 percent, review targeting first.</p></div><div class="modular-item"><span class="modular-num">04</span><h4>Modal CTR</h4><p>20 to 40 percent for an actionable CTA on a relevant launch. Lower for informational-only announcements.</p></div></div><p>These are diagnostic ranges, not targets. If your numbers fall well below them, it usually points to a targeting problem — the message is shown to users for whom it is not relevant — or a copy problem — the message does not communicate a clear reason to act. If your numbers are above the top of the range, you have a well-matched message and audience.</p></section><section id="improving"><h2>How to improve campaign performance</h2><p>Analytics are useful only if they inform a next action. Here are the most common improvement levers.</p><ol><li>Narrow the audience. The more specific the targeting, the higher the click-through rate. If you are targeting all users, try narrowing to users who have visited the relevant section at least once in the last 30 days.</li><li>Move the format. A tooltip fires in the right context. A modal fires on login. If the feature is specific to a section, a tooltip in that section will outperform a modal on the dashboard.</li><li>Shorten the copy. If users are dismissing quickly, they are probably not reading the body. Cut the message to two sentences and test whether CTR improves.</li><li>Check the CTA label. Specific labels outperform generic ones. &#x27;Try the export feature&#x27; converts better than &#x27;Learn more&#x27;.</li><li>Review the inactivity window for nudges. A 14-day window may include users who are just infrequent. Try 21 or 30 days for features users only need occasionally.</li></ol></section><section id="workspace-analytics"><h2>Workspace-level analytics</h2><p>Beyond individual campaign analytics, FeaturePin shows a workspace summary: total MAU for the current 30-day window, impression volume across all active campaigns, and the top five campaigns by impression count. This gives you a quick read on overall product communication health without opening each campaign individually.</p><p>The MAU counter is also the billing metric. It updates daily and reflects the rolling 30-day count of unique users your SDK identified. You can see the current count, the plan limit, and how many days are left in the current window from the Settings section. Limits come with a seven-day grace period before the account is locked.</p><div class="solve-box">
+  <p>Ready to try it?</p>
+  <a class="btn btn-primary" href="https://app.featurepin.com/signup">Start for free</a>
+</div></section>
+      </article>
+      <aside class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li><a href="#three-events">The three events that matter</a></li><li><a href="#dashboard">The analytics dashboard</a></li><li><a href="#benchmarks">What good numbers look like</a></li><li><a href="#improving">How to improve campaign performance</a></li><li><a href="#workspace-analytics">Workspace-level analytics</a></li></ul></aside>
+    </div>
+  </div>
+  <section class="related">
+  <div class="rail">
+    <div class="section-head" style="margin-bottom:0">
+      <div class="eyebrow">Keep reading</div>
+      <h2 style="font-size:clamp(28px,3.4vw,40px)">Related pages.</h2>
+    </div>
+    <div class="related-grid"><a class="related-card" href="/feature-adoption-nudges/">
+  <div class="related-kind">Use case</div>
+  <h4>Feature adoption nudges</h4>
+  <p>The campaigns that generate the most interesting analytics signal.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a><a class="related-card" href="/in-app-announcements/">
+  <div class="related-kind">Use case</div>
+  <h4>In-app announcements</h4>
+  <p>The other campaign type, alongside nudges.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a><a class="related-card" href="/resources/feature-adoption-guide/">
+  <div class="related-kind">Guide</div>
+  <h4>Feature adoption guide</h4>
+  <p>A framework for defining and measuring adoption beyond clicks.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a></div>
+  </div>
+</section>
+  <section class="final" id="cta">
+    <div class="rail final-inner">
+      <h2>Your next feature deserves to be seen.</h2>
+      <p>Start for free. No credit card required.</p>
+      <a class="btn btn-primary btn-lg" href="https://app.featurepin.com/signup">Start for free <span class="arr"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="rail footer-shell">
+    <div class="footer-brand">
+      <div class="logo" style="font-size:14px">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>FeaturePin</span>
+      </div>
+      <p>The in-app announcement and nudge tool for SaaS teams that want adoption without enterprise bloat.</p>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-group">
+        <div class="footer-label">Product</div>
+        <a href="/all-features/">All features</a>
+        <a href="/feature-adoption-nudges/">Feature adoption nudges</a>
+        <a href="/in-app-announcements/">In-app announcements</a>
+        <a href="/campaign-analytics/">Campaign analytics</a>
+        <a href="/#pricing">Pricing</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Industries</div>
+        <a href="/featurepin-for-fintech-saas/">Fintech SaaS</a>
+        <a href="/featurepin-for-hr-saas/">HR SaaS</a>
+        <a href="/featurepin-for-marketing-saas/">Marketing SaaS</a>
+        <a href="/featurepin-for-devtools/">DevTools</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Resources</div>
+        <a href="/featurepin-vs-userguiding/">FeaturePin vs UserGuiding</a>
+        <a href="/featurepin-vs-beamer/">FeaturePin vs Beamer</a>
+        <a href="/resources/feature-adoption-guide/">Feature adoption guide</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Company</div>
+        <a href="https://app.featurepin.com/login">Log in</a>
+        <a href="https://app.featurepin.com/signup">Start for free</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+    <div class="footer-meta">© 2026 FeaturePin. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
