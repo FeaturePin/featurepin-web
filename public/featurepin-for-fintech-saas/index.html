@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" data-accent="cyan">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -8,17 +8,123 @@
   <link rel="canonical" href="https://featurepin.com/featurepin-for-fintech-saas/"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' rx='3' stroke='%230ea5e9' stroke-width='2.5' fill='none' transform='rotate(45 16 16)'/%3E%3Crect x='12' y='12' width='8' height='8' rx='2' fill='%230ea5e9'/%3E%3C/svg%3E"/>
-  <link rel="stylesheet" href="/styles.css?v=15"/>
+  <link rel="stylesheet" href="/styles.css?v=17"/>
 </head>
 <body>
-  <div id="root"></div>
-  <script>window.__SEO_PAGE__ = "featurepin-for-fintech-saas";</script>
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
-  <script type="text/babel" src="/shared.jsx?v=15"></script>
-  <script type="text/babel" src="/seo.jsx?v=16"></script>
+<header class="nav">
+  <div class="rail nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span>FeaturePin</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="/#pricing">Pricing</a>
+      <a class="nav-link" href="/resources/feature-adoption-guide/">Resources</a>
+      <a class="nav-link" href="https://app.featurepin.com/login">Log in</a>
+      <a class="btn btn-primary" href="https://app.featurepin.com/signup">Start for free</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="seo-hero">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="rail">
+      <div class="crumb"><a href="/">FeaturePin</a><span class="sep">/</span><span>Industries</span><span class="sep">/</span><span class="here">Fintech SaaS</span></div>
+      <div style="margin-top:22px">
+        <span class="kind-pill"><span class="dot" style="width:6px;height:6px;border-radius:99px;background:var(--accent);display:inline-block;margin-right:6px"></span>Industry</span>
+      </div>
+      <h1>FeaturePin for <span class="accent">fintech SaaS</span>.</h1>
+      <p class="lede">In-app announcements and nudges for products that need adoption help without signing up for an invasive analytics platform.</p>
+      <div class="meta"><span><strong>Reading time</strong> · 5 min</span><span><strong>Updated</strong> · May 2026</span><span><strong>For</strong> · Heads of Product, founders</span></div>
+    </div>
+  </section>
+  <div class="seo-body">
+    <div class="rail seo-grid">
+      <article class="prose">
+        <p style="font-size:18.5px;color:var(--fg);line-height:1.55;margin-bottom:2em">Fintech teams do not have much patience for bloated SDKs, vague data collection policies, or long setup projects just to tell users that a feature launched. You still need product adoption. You just need a smaller surface area and a clearer story for security, compliance, and legal review.</p>
+        <section id="why-fintech-is-different"><h2>Why fintech has a different bar</h2><p>Fintech products operate in an environment where scripts get reviewed, access controls matter, and customer trust is fragile. That changes the evaluation criteria for any in-app messaging tool.</p><ul><li>Security teams want a narrow implementation surface.</li><li>Compliance teams want clarity on what data is collected.</li><li>Product teams still need to improve feature discovery and rollout communication.</li></ul></section><section id="what-featurepin-does"><h2>What FeaturePin does differently</h2><p>FeaturePin is intentionally narrow. It handles announcements and nudges. It is not trying to be a survey tool, knowledge base, product tour suite, or session replay product.</p><div class="callout"><strong>Focused telemetry</strong><p>The core feedback loop is impressions, clicks, and dismissals, tied to the campaign. Enough to understand adoption, without dragging in a much larger analytics footprint.</p></div></section><section id="where-it-fits"><h2>Where fintech teams use it</h2><div class="modular-grid"><div class="modular-item"><span class="modular-num">01</span><h4>KYC and onboarding</h4><p>Prompt users through the next step when a flow stalls.</p></div><div class="modular-item"><span class="modular-num">02</span><h4>Plan-aware upgrades</h4><p>Show premium capabilities only to the customers who can act on them.</p></div><div class="modular-item"><span class="modular-num">03</span><h4>Regulatory updates</h4><p>Communicate product changes that users need to acknowledge or understand.</p></div><div class="modular-item"><span class="modular-num">04</span><h4>Reactivation prompts</h4><p>Bring users back to underused financial workflows after launch.</p></div></div></section><section id="fintech-data-and-compliance"><h2>Data collection and compliance posture</h2><p>The two questions that come up most in fintech security reviews are: what data does this collect, and who can see it? FeaturePin collects impressions, clicks, and dismissals keyed to an end-user identifier your team provides. It does not fingerprint devices, read DOM content, track navigation history, or collect financial data of any kind.</p><p>The end-user identifier you pass through featurepin.identify() can be a pseudonymous ID. Nothing in the implementation requires passing a name, email address, or account number. Your compliance team can verify the actual traffic by inspecting the SDK calls directly — there are no undocumented collection points.</p><ul><li>Data collected: end-user ID, campaign ID, event type (impression/click/dismiss), timestamp, URL.</li><li>Data not collected: names, email addresses, financial data, device fingerprints, DOM snapshots.</li><li>Storage: events are retained in your workspace only, no third-party analytics pipeline.</li></ul></section><section id="fintech-setup-and-approval"><h2>What a typical approval process looks like</h2><p>For fintech teams, getting a new script approved typically involves security review, compliance sign-off, and sometimes legal review. FeaturePin is designed to make that process as short as possible.</p><p>The integration is a single script tag pointing to a small JavaScript file. The file can be reviewed statically. The API calls made at runtime are limited to one config fetch and one event batch endpoint. The full network surface is readable in under an hour by anyone doing the review.</p><p>Teams that have gone through this review often find that having something simple and auditable is more valuable than a longer feature list. A tool with ten data collection vectors is harder to approve than one with two, regardless of how the privacy policy reads.</p><div class="callout"><strong>Security review checklist</strong><p>FeaturePin uses no eval(), no inline code injection, no cross-origin cookies, and no third-party analytics aggregation. The SDK is served from a CDN but the source is publicly inspectable. Subresource Integrity (SRI) hashes are available on request for teams that require it.</p></div></section><section id="review-process"><h2>What makes approval easier</h2><p>A smaller tool is easier to approve when the answer to &#x27;what does this do?&#x27; is simple and consistent. FeaturePin exists to place in-app messages, target them sanely, and report basic campaign outcomes.</p><p>That clarity is often more valuable than an enormous feature list for teams that would never use most of the suite anyway.</p><div class="solve-box">
+  <p>Ready to try it?</p>
+  <a class="btn btn-primary" href="https://app.featurepin.com/signup">Start for free</a>
+</div></section>
+      </article>
+      <aside class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li><a href="#why-fintech-is-different">Why fintech has a different bar</a></li><li><a href="#what-featurepin-does">What FeaturePin does differently</a></li><li><a href="#where-it-fits">Where fintech teams use it</a></li><li><a href="#fintech-data-and-compliance">Data collection and compliance posture</a></li><li><a href="#fintech-setup-and-approval">What a typical approval process looks like</a></li><li><a href="#review-process">What makes approval easier</a></li></ul></aside>
+    </div>
+  </div>
+  <section class="related">
+  <div class="rail">
+    <div class="section-head" style="margin-bottom:0">
+      <div class="eyebrow">Keep reading</div>
+      <h2 style="font-size:clamp(28px,3.4vw,40px)">Related pages.</h2>
+    </div>
+    <div class="related-grid"><a class="related-card" href="/in-app-announcements/">
+  <div class="related-kind">Use case</div>
+  <h4>In-app announcements</h4>
+  <p>The simplest format for launch and compliance communication.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a><a class="related-card" href="/featurepin-vs-userguiding/">
+  <div class="related-kind">Compare</div>
+  <h4>FeaturePin vs UserGuiding</h4>
+  <p>When a broad platform is heavier than you need.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a><a class="related-card" href="/resources/feature-adoption-guide/">
+  <div class="related-kind">Guide</div>
+  <h4>Feature adoption guide</h4>
+  <p>A practical framework for deciding what to measure.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a></div>
+  </div>
+</section>
+  <section class="final" id="cta">
+    <div class="rail final-inner">
+      <h2>Your next feature deserves to be seen.</h2>
+      <p>Start for free. No credit card required.</p>
+      <a class="btn btn-primary btn-lg" href="https://app.featurepin.com/signup">Start for free <span class="arr"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="rail footer-shell">
+    <div class="footer-brand">
+      <div class="logo" style="font-size:14px">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>FeaturePin</span>
+      </div>
+      <p>The in-app announcement and nudge tool for SaaS teams that want adoption without enterprise bloat.</p>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-group">
+        <div class="footer-label">Product</div>
+        <a href="/all-features/">All features</a>
+        <a href="/feature-adoption-nudges/">Feature adoption nudges</a>
+        <a href="/in-app-announcements/">In-app announcements</a>
+        <a href="/campaign-analytics/">Campaign analytics</a>
+        <a href="/#pricing">Pricing</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Industries</div>
+        <a href="/featurepin-for-fintech-saas/">Fintech SaaS</a>
+        <a href="/featurepin-for-hr-saas/">HR SaaS</a>
+        <a href="/featurepin-for-marketing-saas/">Marketing SaaS</a>
+        <a href="/featurepin-for-devtools/">DevTools</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Resources</div>
+        <a href="/featurepin-vs-userguiding/">FeaturePin vs UserGuiding</a>
+        <a href="/featurepin-vs-beamer/">FeaturePin vs Beamer</a>
+        <a href="/resources/feature-adoption-guide/">Feature adoption guide</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Company</div>
+        <a href="https://app.featurepin.com/login">Log in</a>
+        <a href="https://app.featurepin.com/signup">Start for free</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+    <div class="footer-meta">© 2026 FeaturePin. All rights reserved.</div>
+  </div>
+</footer>
 </body>
 </html>

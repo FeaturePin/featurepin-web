@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" data-accent="cyan">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -8,17 +8,123 @@
   <link rel="canonical" href="https://featurepin.com/feature-adoption-nudges/"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' rx='3' stroke='%230ea5e9' stroke-width='2.5' fill='none' transform='rotate(45 16 16)'/%3E%3Crect x='12' y='12' width='8' height='8' rx='2' fill='%230ea5e9'/%3E%3C/svg%3E"/>
-  <link rel="stylesheet" href="/styles.css?v=15"/>
+  <link rel="stylesheet" href="/styles.css?v=17"/>
 </head>
 <body>
-  <div id="root"></div>
-  <script>window.__SEO_PAGE__ = "feature-adoption-nudges";</script>
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
-  <script type="text/babel" src="/shared.jsx?v=15"></script>
-  <script type="text/babel" src="/seo.jsx?v=16"></script>
+<header class="nav">
+  <div class="rail nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span>FeaturePin</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="/#pricing">Pricing</a>
+      <a class="nav-link" href="/resources/feature-adoption-guide/">Resources</a>
+      <a class="nav-link" href="https://app.featurepin.com/login">Log in</a>
+      <a class="btn btn-primary" href="https://app.featurepin.com/signup">Start for free</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="seo-hero">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="rail">
+      <div class="crumb"><a href="/">FeaturePin</a><span class="sep">/</span><span>Use cases</span><span class="sep">/</span><span class="here">Feature adoption nudges</span></div>
+      <div style="margin-top:22px">
+        <span class="kind-pill"><span class="dot" style="width:6px;height:6px;border-radius:99px;background:var(--accent);display:inline-block;margin-right:6px"></span>Use case</span>
+      </div>
+      <h1>Feature adoption <span class="accent">nudges</span>.</h1>
+      <p class="lede">Reach users who still have not tried a feature, inside your product, at the exact moment a reminder can change the outcome.</p>
+      <div class="meta"><span><strong>Reading time</strong> · 6 min</span><span><strong>Updated</strong> · May 2026</span><span><strong>For</strong> · Product Managers, founders</span></div>
+    </div>
+  </section>
+  <div class="seo-body">
+    <div class="rail seo-grid">
+      <article class="prose">
+        <p style="font-size:18.5px;color:var(--fg);line-height:1.55;margin-bottom:2em">Most features do not fail because they are weak. They fail because the team ships them, posts a changelog, and assumes users will connect the dots on their own. A feature adoption nudge fixes that gap with one simple rule: when the right user misses the right feature, show a short in-app message and move them one step closer to first use.</p>
+        <section id="what-it-is"><h2>What a feature adoption nudge actually is</h2><p>A feature adoption nudge is a conditional in-app message tied to a specific user state. It can be a tooltip on a button, a banner on a page, or a modal after login. The important part is not the format. The important part is that it appears only when the user still has not tried the feature.</p><p>That makes nudges different from announcements. Announcements tell everyone that something exists. Nudges focus on the people who missed it.</p><div class="callout"><strong>Simple rule, strong effect</strong><p>If a user has not visited a feature area in 14 days, remind them in context instead of waiting for them to discover it alone.</p></div></section><section id="why-teams-need-them"><h2>Why SaaS teams need them</h2><p>Most SaaS teams track releases and revenue far better than they track whether new capabilities were actually adopted. By the time someone notices that a launch underperformed, the team has already moved on to the next sprint.</p><div class="stat-block"><span class="stat-num">14 days</span><span class="stat-label">is the rough window after launch when a user either discovers a feature or starts ignoring it permanently.</span></div><p>A nudge gives you a second chance without asking engineering to hard-code custom prompts every time the roadmap ships something new.</p></section><section id="how-to-build-one"><h2>How to build a nudge that gets used</h2><ol><li>Pick a feature with low adoption but clear value.</li><li>Define who should see the nudge and who should never see it.</li><li>Choose one in-product surface close to the action.</li><li>Write copy that is specific, short, and useful.</li></ol><h3>The rule is the product</h3><p>The best nudges are barely noticeable until they are needed. Example: if a user has not used exports after two weeks, show a tooltip on the export trigger the next time they are on the reporting page.</p><div class="solve-box">
+  <p>Ready to try it?</p>
+  <a class="btn btn-primary" href="https://app.featurepin.com/signup">Start for free</a>
+</div></section><section id="patterns"><h2>Patterns worth copying</h2><div class="modular-grid"><div class="modular-item"><span class="modular-num">01</span><h4>The reactivation nudge</h4><p>For users who logged in several times since launch but still ignored the feature.</p></div><div class="modular-item"><span class="modular-num">02</span><h4>The empty-state nudge</h4><p>For sections where an unused feature is the most obvious next action.</p></div><div class="modular-item"><span class="modular-num">03</span><h4>The plan-aware nudge</h4><p>For paid capabilities where only eligible users should see the message.</p></div><div class="modular-item"><span class="modular-num">04</span><h4>The context nudge</h4><p>For moments when a user is already doing the task your new feature improves.</p></div></div></section><section id="mistakes"><h2>Mistakes that make nudges annoying</h2><ul><li>Showing the same nudge to users who already adopted the feature.</li><li>Using modal copy for a tooltip and forcing users to read too much.</li><li>Launching several nudges in the same session and competing with yourself.</li><li>Treating every feature like a company-wide event.</li></ul><blockquote><p>If your nudge feels like marketing, it will be ignored like marketing.</p><cite>FeaturePin rule of thumb</cite></blockquote></section><section id="measuring"><h2>Measuring whether a nudge worked</h2><p>A nudge works if it increases the rate at which non-adopters become first-time users. FeaturePin tracks three events per campaign: impression, click, and dismiss. Click-through rate is the primary signal. A click means the user went to the feature.</p><p>A well-targeted tooltip nudge on a specific feature page typically sees click-through rates between 15 and 35 percent — several times higher than email for the same message. If your nudge shows lower than 10 percent CTR, the usual culprits are: targeting too broad, message not matching the context, or the user has no immediate reason to try the feature right now.</p><h3>The right comparison</h3><p>Compare first-use rates between the cohort who received the nudge and an equivalent cohort who did not. That delta is the nudge&#x27;s real impact. Click-through rate alone does not capture users who saw the nudge, dismissed it, and then tried the feature on their own shortly after — which happens more often than you might expect.</p></section><section id="faq-nudges"><h2>Common questions about nudges</h2><h3>How is a nudge different from an announcement?</h3><p>An announcement fires once to a defined audience regardless of their behavior. A nudge fires conditionally: only to users who have not yet done a specific thing. Announcements are broadcasts. Nudges are follow-ups. Both are useful, and the most effective product communication strategies use both in sequence.</p><h3>Will nudges annoy my users?</h3><p>Only if you target them badly. A nudge shown to a user who already uses the feature is annoying. A nudge shown to a user who has not found something genuinely useful to them is a helpful reminder. The condition is everything. FeaturePin automatically stops showing the nudge once the user visits the relevant section — you never have to manually retire them.</p><h3>How many nudges should I run at once?</h3><p>Most teams start with one or two. Running more than four or five active nudges at the same time creates the risk of users seeing multiple messages in the same session, which trains them to dismiss everything. Prioritize nudges by feature value and adoption gap. The features with the highest value and the lowest adoption are the right place to start.</p><h3>How long should I leave a nudge active?</h3><p>Leave it active until the adoption gap closes or you are satisfied with the result. FeaturePin&#x27;s analytics will show you whether the CTR is still generating meaningful conversions. If impressions are dropping — meaning fewer users are hitting the non-adoption condition — that is a sign the nudge has done its job and you can archive it or replace it with a new campaign for a different feature.</p></section>
+      </article>
+      <aside class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li><a href="#what-it-is">What a feature adoption nudge actually is</a></li><li><a href="#why-teams-need-them">Why SaaS teams need them</a></li><li><a href="#how-to-build-one">How to build a nudge that gets used</a></li><li><a href="#patterns">Patterns worth copying</a></li><li><a href="#mistakes">Mistakes that make nudges annoying</a></li><li><a href="#measuring">Measuring whether a nudge worked</a></li><li><a href="#faq-nudges">Common questions about nudges</a></li></ul></aside>
+    </div>
+  </div>
+  <section class="related">
+  <div class="rail">
+    <div class="section-head" style="margin-bottom:0">
+      <div class="eyebrow">Keep reading</div>
+      <h2 style="font-size:clamp(28px,3.4vw,40px)">Related pages.</h2>
+    </div>
+    <div class="related-grid"><a class="related-card" href="/in-app-announcements/">
+  <div class="related-kind">Use case</div>
+  <h4>In-app announcements</h4>
+  <p>When the message should go to everyone, not only non-adopters.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a><a class="related-card" href="/campaign-analytics/">
+  <div class="related-kind">Product</div>
+  <h4>Campaign analytics</h4>
+  <p>How to measure whether your nudges and announcements converted.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a><a class="related-card" href="/resources/feature-adoption-guide/">
+  <div class="related-kind">Guide</div>
+  <h4>Feature adoption guide</h4>
+  <p>Definitions, benchmarks, and the four levers that move adoption.</p>
+  <div class="arr-row">Read <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+</a></div>
+  </div>
+</section>
+  <section class="final" id="cta">
+    <div class="rail final-inner">
+      <h2>Your next feature deserves to be seen.</h2>
+      <p>Start for free. No credit card required.</p>
+      <a class="btn btn-primary btn-lg" href="https://app.featurepin.com/signup">Start for free <span class="arr"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="rail footer-shell">
+    <div class="footer-brand">
+      <div class="logo" style="font-size:14px">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>FeaturePin</span>
+      </div>
+      <p>The in-app announcement and nudge tool for SaaS teams that want adoption without enterprise bloat.</p>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-group">
+        <div class="footer-label">Product</div>
+        <a href="/all-features/">All features</a>
+        <a href="/feature-adoption-nudges/">Feature adoption nudges</a>
+        <a href="/in-app-announcements/">In-app announcements</a>
+        <a href="/campaign-analytics/">Campaign analytics</a>
+        <a href="/#pricing">Pricing</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Industries</div>
+        <a href="/featurepin-for-fintech-saas/">Fintech SaaS</a>
+        <a href="/featurepin-for-hr-saas/">HR SaaS</a>
+        <a href="/featurepin-for-marketing-saas/">Marketing SaaS</a>
+        <a href="/featurepin-for-devtools/">DevTools</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Resources</div>
+        <a href="/featurepin-vs-userguiding/">FeaturePin vs UserGuiding</a>
+        <a href="/featurepin-vs-beamer/">FeaturePin vs Beamer</a>
+        <a href="/resources/feature-adoption-guide/">Feature adoption guide</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-label">Company</div>
+        <a href="https://app.featurepin.com/login">Log in</a>
+        <a href="https://app.featurepin.com/signup">Start for free</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+    <div class="footer-meta">© 2026 FeaturePin. All rights reserved.</div>
+  </div>
+</footer>
 </body>
 </html>
