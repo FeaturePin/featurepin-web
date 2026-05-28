@@ -1,3 +1,6 @@
 .vercel
 .gstack/
 *.png
+
+dist/
+node_modules/
