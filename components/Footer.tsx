@@ -31,6 +31,7 @@ export default function Footer() {
             <div className="footer-label">Resources</div>
             <a href="/featurepin-vs-userguiding/">FeaturePin vs UserGuiding</a>
             <a href="/featurepin-vs-beamer/">FeaturePin vs Beamer</a>
+            <a href="/resources/getting-started/">Getting started</a>
             <a href="/resources/feature-adoption-guide/">Feature adoption guide</a>
           </div>
           <div className="footer-group">
@@ -38,6 +39,7 @@ export default function Footer() {
             <a href="https://app.featurepin.com/login">Log in</a>
             <a href="https://app.featurepin.com/signup">Start for free</a>
             <a href="/help/">Help Center</a>
+            <a href="mailto:hello@featurepin.com">Contact</a>
             <a href="/privacy/">Privacy</a>
             <a href="/terms/">Terms</a>
             <CookieSettingsLink />

@@ -554,6 +554,94 @@ export const PAGES: Record<string, SeoPage> = {
       { href: "/featurepin-vs-userguiding/", kind: "Compare", title: "FeaturePin vs UserGuiding", desc: "Why a narrower tool fits better in a devtools context." },
     ],
   },
+  "getting-started": {
+    title: "Getting Started with FeaturePin | SDK Install in 5 Minutes",
+    description: "Step-by-step guide to installing the FeaturePin SDK, identifying your users, and launching your first in-app announcement or nudge in under five minutes.",
+    canonical: "https://featurepin.com/resources/getting-started/",
+    kind: "Guide",
+    crumb: ["Resources", "Getting started"],
+    h1prefix: "Install FeaturePin",
+    h1accent: "in 5 minutes",
+    lede: "One snippet. No build step. No backend changes. This guide takes you from a blank account to a live in-app announcement before your next standup.",
+    meta: [["Reading time", "5 min"], ["Updated", "May 2026"], ["By", "FeaturePin"]],
+    intro: "FeaturePin is built to be installed once and then operated entirely from the dashboard. Engineering adds a single script tag and a one-line identify call. After that, your product team launches every announcement and nudge on their own, without touching code again. This guide walks through every step.",
+    sections: [
+      { id: "prerequisites", title: "What you need before you start", body: [
+        { kind: "p", text: "You need a FeaturePin account and access to the HTML or JavaScript of your product. That is it. You do not need a backend change, a new API integration, or any build pipeline modification. If you can add a script tag to your app, you can install FeaturePin." },
+        { kind: "ul", items: [
+          "A FeaturePin account. Sign up at app.featurepin.com/signup. It takes under a minute and no credit card is required.",
+          "Access to your product's HTML or JavaScript codebase. Specifically, you need to be able to add a script tag that loads before your main app JavaScript, or at the end of the body.",
+          "The user ID and any properties you want to pass (plan, role, company). These are optional at install time but required if you want property-based targeting later.",
+        ]},
+        { kind: "p", text: "The SDK works with any frontend stack: plain HTML, React, Next.js, Vue, Angular, or anything else that runs in a browser. There is no framework-specific package to install. The snippet is a single JavaScript file loaded from our CDN." },
+      ]},
+      { id: "workspace", title: "Step 1: find your workspace ID", body: [
+        { kind: "p", text: "After signing up, FeaturePin creates a workspace for you automatically. Your workspace ID is the public token the SDK uses to connect to your account. It is not a secret: it lives in your frontend code and that is by design." },
+        { kind: "p", text: "To find it, go to Settings, then Snippet in the left sidebar. You will see your workspace ID and the full snippet with it already filled in. Copy the snippet from there rather than typing it manually." },
+        { kind: "callout", title: "Why the workspace ID is public", text: "The SDK uses your workspace ID to fetch active campaigns and report impression events. It cannot read private data, modify your account, or perform any write operation beyond logging anonymous events. Treating it like a secret would add friction without adding security." },
+      ]},
+      { id: "install", title: "Step 2: add the snippet to your product", body: [
+        { kind: "p", text: "Paste the snippet into your HTML before the closing body tag. The script loads asynchronously, so it will never block your page render regardless of where you put it. Loading it near the end of the body is fine for most apps. Loading it in the head with a defer attribute is also fine." },
+        { kind: "p", text: "The snippet has two parts. The first line loads fp.js from the CDN. The second line initialises FeaturePin with your workspace ID:" },
+        { kind: "ul", items: [
+          "The loader: a script tag pointing to https://app.featurepin.com/fp.js",
+          "The init call: featurepin.init({ token: 'your-workspace-id' })",
+        ]},
+        { kind: "p", text: "If you are using a JavaScript framework like React or Next.js, the recommended pattern is to call featurepin.init() once in your root layout or app entry point, after the component mounts. In Next.js App Router, add it to your root layout.tsx inside a useEffect with an empty dependency array, or use a client component that initialises on mount." },
+        { kind: "p", text: "If your product is a single-page application, you only need to call init() once per session. The SDK is designed for SPAs: it detects URL changes automatically and re-evaluates active campaigns without requiring a page reload. You do not need to call init() on every route change." },
+      ]},
+      { id: "identify", title: "Step 3: identify your users", body: [
+        { kind: "p", text: "The init call alone is enough to show campaigns to anonymous visitors. But to use targeting by user properties, or to make sure the same user does not see the same campaign twice across devices, you need to call identify()." },
+        { kind: "p", text: "Call identify() as soon as you know who the current user is, typically right after your auth check resolves. Pass the user's unique ID from your own system (database ID, UUID, or any stable identifier) plus any properties you want to use for targeting:" },
+        { kind: "ul", items: [
+          "id: required. Your internal user ID. This is what FeaturePin uses to deduplicate impressions.",
+          "email: optional but recommended. Makes it easier to look up users in the dashboard.",
+          "plan: optional. Useful for targeting campaigns to Free vs paid users.",
+          "role: optional. Useful for targeting campaigns to admins, editors, or specific roles.",
+          "Any other custom property your product tracks. Pass it as a key-value pair and it will be available in the targeting rules editor.",
+        ]},
+        { kind: "p", text: "You can call identify() multiple times in a session if the user's properties change (for example, after an upgrade). Each call overwrites the previous properties for that user ID." },
+        { kind: "callout", title: "Anonymous users", text: "If a user is not logged in, or if you call init() before identify(), FeaturePin tracks them as an anonymous session. Campaigns with no targeting rules will still show. Anonymous sessions are counted toward your MAU once they receive at least one event." },
+      ]},
+      { id: "verify", title: "Step 4: verify the installation", body: [
+        { kind: "p", text: "Once you have added the snippet and deployed, go to Settings, then Snippet in your FeaturePin dashboard. Click the Check button. FeaturePin will look for recent events from your workspace and confirm whether the SDK is sending data correctly." },
+        { kind: "p", text: "If the check does not pass within a few minutes, there are three common causes:" },
+        { kind: "ul", items: [
+          "The snippet is present in your code but the deploy has not gone live yet. Wait for your deploy pipeline to finish and try again.",
+          "The init() call has the wrong workspace ID. Double-check that you copied the ID from Settings, not from a tutorial or placeholder.",
+          "A Content Security Policy on your app is blocking the script. Add app.featurepin.com to your script-src and connect-src directives.",
+        ]},
+        { kind: "p", text: "The Tracked Users page in your dashboard shows every user who has been identified. If you see your own user there after browsing your product, the installation is working correctly." },
+      ]},
+      { id: "first-announcement", title: "Step 5: create your first announcement", body: [
+        { kind: "p", text: "Go to Announcements in the sidebar and click New announcement. You will see a form on the left and a live preview on the right. Changes you make to the copy and style update the preview instantly." },
+        { kind: "p", text: "Choose the message type first: modal for high-attention messages, banner for persistent visibility, or tooltip for contextual hints tied to a specific page or section." },
+        { kind: "p", text: "Fill in the title, body, and CTA text. The CTA URL is where users land when they click the button. If your announcement is informational and does not need a click-through, leave the CTA URL empty and the button will just dismiss the message." },
+        { kind: "p", text: "Under Targeting, select who should see the announcement. All users broadcasts to everyone in your workspace. URL match limits visibility to specific pages. Property match lets you target by the user attributes you passed through identify(). For a first test, leave it set to All users." },
+        { kind: "p", text: "Click Save as draft. Review the preview one more time, then click Activate. The campaign is now live. Any user who loads your product will see it the next time the SDK polls for active campaigns, which happens every 30 seconds." },
+      ]},
+      { id: "first-nudge", title: "Step 6: create your first nudge", body: [
+        { kind: "p", text: "A nudge is a conditional message. It only shows to users who match a rule you define, and it stops showing the moment they match the done condition. Nudges are the mechanism for following up with users who did not adopt a feature after your initial announcement." },
+        { kind: "p", text: "Go to Nudges and click New nudge. The setup is similar to an announcement, with one addition: the trigger rule. The most common rule is inactivity-based. It translates to: show this message to users who have not visited a URL in the last N days." },
+        { kind: "p", text: "For example, if you recently launched a reporting section at /reports, you might set the rule to: user has not visited /reports in the last 14 days. Any user who still has not visited that section after 14 days will see the nudge the next time they log in, wherever they are in your product." },
+        { kind: "p", text: "The nudge disappears automatically once the user visits the target URL. You do not need to manually deactivate it per user. FeaturePin evaluates all active nudge rules every 15 minutes and updates each user's eligibility." },
+        { kind: "callout", title: "Nudges respect your users", text: "A nudge shows at most once per user per session. If the user dismisses it, FeaturePin will not show it again until the next session. If the user clicks through and visits the feature, FeaturePin marks it as resolved and never shows it again." },
+      ]},
+      { id: "next", title: "What to do after your first campaign", body: [
+        { kind: "p", text: "Once your first campaign is live and collecting data, the Analytics section becomes useful. You will see impression counts, click-through rates, and a daily breakdown for each campaign. These numbers tell you whether your message reached users (impressions) and whether it was compelling enough to act on (CTR)." },
+        { kind: "p", text: "A healthy in-app modal CTR for a well-targeted launch sits between 25 and 45 percent. If you are below that, the most common fix is tighter targeting. A message that is relevant to a smaller audience will almost always outperform a broad message sent to everyone." },
+        { kind: "p", text: "After your first announcement, the next natural step is to set up a nudge for the same feature. Wait 7 to 14 days. Then create a nudge targeting users who still have not visited the feature URL. That follow-up pass typically closes a meaningful portion of the remaining non-adopters with no additional engineering work." },
+        { kind: "p", text: "If you have questions during setup, reply to your welcome email or write to hello@featurepin.com. Setup questions usually get a response within a few hours on business days." },
+        { kind: "solve" },
+      ]},
+    ],
+    related: [
+      { href: "/resources/feature-adoption-guide/", kind: "Guide", title: "Feature adoption guide", desc: "Why adoption stalls after launch and the four moves that fix it." },
+      { href: "/in-app-announcements/", kind: "Use case", title: "In-app announcements", desc: "Deeper look at the announcement formats and when to use each." },
+      { href: "/feature-adoption-nudges/", kind: "Use case", title: "Feature adoption nudges", desc: "How nudges work and when to use them over announcements." },
+    ],
+  },
+
   "feature-adoption-guide": {
     title: "Feature Adoption Guide for SaaS Teams | FeaturePin",
     description: "A practical guide to feature adoption for SaaS teams, including definitions, benchmarks, and tactics that move usage after launch.",
@@ -614,4 +702,4 @@ export const PAGES: Record<string, SeoPage> = {
   },
 }
 
-export const SEO_SLUGS = Object.keys(PAGES).filter(k => k !== 'feature-adoption-guide')
+export const SEO_SLUGS = Object.keys(PAGES).filter(k => k !== 'feature-adoption-guide' && k !== 'getting-started')
