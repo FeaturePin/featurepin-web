@@ -20,7 +20,7 @@ const sections = [
             <p>The SDK is a single JavaScript snippet you add once to your product. No framework-specific packages needed.</p>
             <ol>
               <li>Log in to <a href="https://app.featurepin.com">app.featurepin.com</a> and go to <strong>Settings</strong>.</li>
-              <li>Copy your SDK snippet. It looks like: <code>{'<script src="https://sdk.featurepin.com/fp.js" data-token="your-workspace-id" async defer></script>'}</code></li>
+              <li>Copy your SDK snippet. It looks like: <code>{'<script src="https://sdk.featurepin.com/fp.js" data-workspace-id="your-workspace-id" async defer></script>'}</code></li>
               <li>Paste it before the closing <code>{'</body>'}</code> tag of your application.</li>
               <li>Call <code>featurepin.identify(userId, properties)</code> after your user authenticates so FeaturePin can target campaigns by user properties.</li>
               <li>Reload your app. You should see a green checkmark in the FeaturePin dashboard confirming the SDK is active.</li>
