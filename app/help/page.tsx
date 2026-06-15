@@ -233,7 +233,7 @@ const sections = [
             <p>Your SDK token is your workspace ID. It is a public identifier that tells the SDK which workspace to load campaigns for. It is intentionally not a secret.</p>
             <ol>
               <li>Go to <strong>Settings &rarr; SDK</strong> in the dashboard.</li>
-              <li>Your SDK snippet is shown pre-filled with your token in the <code>data-token</code> attribute.</li>
+              <li>Your SDK snippet is shown pre-filled with your token in the <code>data-workspace-id</code> attribute.</li>
               <li>You can also copy the raw token value if you need it for a custom integration.</li>
             </ol>
             <p className="help-tip"><strong>Tip:</strong> The token is safe to include in your frontend code and is visible to anyone who inspects your page source. It only identifies your workspace, it does not grant access to your account.</p>
