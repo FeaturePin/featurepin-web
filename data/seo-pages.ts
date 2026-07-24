@@ -35,6 +35,7 @@ export type SeoPage = {
   intro: string
   sections: Section[]
   related: RelatedItem[]
+  cta?: { heading: string; sub: string; label: string; href: string }
 }
 
 export const PAGES: Record<string, SeoPage> = {
@@ -72,6 +73,10 @@ export const PAGES: Record<string, SeoPage> = {
           { num: "04", title: "Inactivity rule", body: "Trigger only for users who have not visited a section in N days. The core nudge condition." },
         ]},
       ]},
+      { id: "element-picker", title: "Chrome extension element picker", body: [
+        { kind: "p", text: "Tooltips and nudges that point at a specific button or tab need an element to attach to. The free FeaturePin Chrome extension turns that into point and click: open your own app, click the element, and the selector fills into the nudge form for you. No CSS to write, nothing for engineering to deploy." },
+        { kind: "callout", title: "Optional but recommended", text: "Prefer to type a CSS selector yourself? You still can. The extension is the fast default for non-technical teams, not a requirement. See the dedicated Chrome extension page for how it works." },
+      ]},
       { id: "sdk", title: "SDK and install", body: [
         { kind: "p", text: "One script tag. That is the entire install. The SDK is under 10KB gzip, loads asynchronously, and never blocks your page render." },
         { kind: "callout", title: "What the SDK does", text: "It identifies your users, polls for active campaigns every 30 seconds, renders the message when a rule matches, and sends impression, click, and dismiss events back in a batch." },
@@ -90,6 +95,7 @@ export const PAGES: Record<string, SeoPage> = {
     related: [
       { href: "/feature-adoption-nudges/", kind: "Use case", title: "Feature adoption nudges", desc: "Deep dive into the nudge rule engine and when to use it." },
       { href: "/in-app-announcements/", kind: "Use case", title: "In-app announcements", desc: "When to use modal, banner, or tooltip for your launch." },
+      { href: "/chrome-extension/", kind: "Product", title: "Chrome extension", desc: "Anchor tooltips and nudges by clicking the element, no CSS required." },
       { href: "/resources/feature-adoption-guide/", kind: "Guide", title: "Feature adoption guide", desc: "The metrics and tactics behind a complete adoption strategy." },
     ],
   },
@@ -152,8 +158,8 @@ export const PAGES: Record<string, SeoPage> = {
     ],
     related: [
       { href: "/in-app-announcements/", kind: "Use case", title: "In-app announcements", desc: "When the message should go to everyone, not only non-adopters." },
+      { href: "/chrome-extension/", kind: "Product", title: "Chrome extension", desc: "Point and click the element to anchor a nudge, no CSS selector needed." },
       { href: "/campaign-analytics/", kind: "Product", title: "Campaign analytics", desc: "How to measure whether your nudges and announcements converted." },
-      { href: "/resources/feature-adoption-guide/", kind: "Guide", title: "Feature adoption guide", desc: "Definitions, benchmarks, and the four levers that move adoption." },
     ],
   },
   "in-app-announcements": {
@@ -699,6 +705,68 @@ export const PAGES: Record<string, SeoPage> = {
       { href: "/in-app-announcements/", kind: "Use case", title: "In-app announcements", desc: "The launch-day layer for broad visibility." },
       { href: "/campaign-analytics/", kind: "Product", title: "Campaign analytics", desc: "How to measure adoption impact from your campaigns." },
     ],
+  },
+  "chrome-extension": {
+    title: "FeaturePin Chrome Extension | Point-and-Click Element Picker",
+    description: "Anchor tooltips and nudges to any element in your app by clicking it. The FeaturePin Chrome extension writes the selector for you, so a PM can place an in-app message without touching code.",
+    canonical: "https://featurepin.com/chrome-extension/",
+    kind: "Product",
+    crumb: ["Product", "Chrome extension"],
+    h1prefix: "The FeaturePin",
+    h1accent: "Chrome extension",
+    lede: "Anchor a tooltip or nudge to any element in your product by clicking it. The extension writes the selector for you, so a PM can place an in-app message exactly where it belongs without asking an engineer.",
+    meta: [["Updated", "July 2026"], ["For", "Product Managers, founders"], ["Price", "Free"]],
+    intro: "Some in-app messages point at a specific spot in your product: a tooltip on the export button, a nudge on the settings tab a user keeps missing. To place one, FeaturePin needs to know which element to attach to. Without help, that means writing a CSS selector by hand, which is a developer task and breaks the moment your markup changes. The FeaturePin Chrome extension removes that step entirely. You open your own app, click the element you want, and the extension fills the selector into the nudge form for you. It is free, it installs in one click, and it is the recommended way for non-technical teams to anchor tooltips and nudges.",
+    sections: [
+      { id: "what-it-does", title: "What the extension does", body: [
+        { kind: "p", text: "The extension adds a point-and-click element picker to your own product. When you are creating or editing a nudge in FeaturePin and choose to anchor it to an element, you open your app with the picker active, hover over the interface, and click the element the message should attach to. FeaturePin captures a stable selector for that element and drops you back into the nudge form with the anchor already filled in." },
+        { kind: "callout", title: "No CSS selectors to write", text: "Writing a selector like button.export-cta[data-role='primary'] is a developer task, and it breaks when the markup changes. The picker generates the selector from a real click, so the person placing the message never has to read or write one." },
+      ]},
+      { id: "how-it-works", title: "How element picking works", body: [
+        { kind: "p", text: "From install to a placed message is four steps, none of them technical." },
+        { kind: "modular", items: [
+          { num: "01", title: "Install once", body: "Add the extension from the Chrome Web Store. It lives in your browser, not in your product, so there is nothing to deploy and nothing for engineering to review." },
+          { num: "02", title: "Open your app", body: "In the nudge form, choose to anchor to an element and open your own product with the picker active. FeaturePin detects the extension automatically." },
+          { num: "03", title: "Click the element", body: "Hover over your interface and click the button, tab, or section the tooltip should point at. The picker highlights each element as you move." },
+          { num: "04", title: "Selector fills in", body: "FeaturePin captures the selector and the page it lives on, then returns you to the nudge form with the anchor populated. Adjust the copy, set the rule, launch." },
+        ]},
+      ]},
+      { id: "when-you-need-it", title: "When you need it, and when you do not", body: [
+        { kind: "p", text: "The extension is only for messages that attach to a specific element. Plenty of campaigns do not need it at all." },
+        { kind: "modular", items: [
+          { num: "01", title: "Use it for anchored tooltips", body: "Any tooltip or nudge that points at a specific button, tab, or section needs an element to attach to. That is what the picker is for." },
+          { num: "02", title: "Skip it for modals and banners", body: "Modals and banners are not anchored to an element. You build and launch them straight from the dashboard, no extension involved." },
+          { num: "03", title: "Skip it for URL targeting", body: "Choosing which pages a message appears on uses URL patterns, not element selectors. No picker needed for that either." },
+          { num: "04", title: "Or type a selector", body: "Prefer to write the selector yourself? You still can. The extension is the fast default, not a requirement." },
+        ]},
+      ]},
+      { id: "why-it-is-better", title: "Why point-and-click beats hand-written selectors", body: [
+        { kind: "p", text: "A hand-written selector is a small piece of code that has to stay in sync with your product. When a developer renames a class or restructures a component, the selector silently stops matching and the tooltip disappears with no error. Recreating it means opening dev tools, finding the element, and copying a path that may itself be fragile." },
+        { kind: "p", text: "Picking the element from a real click sidesteps that whole loop. The person who owns the message, usually a PM, places it directly, sees exactly where it will render, and never has to file a ticket to move a tooltip three pixels. It keeps the promise the rest of FeaturePin makes: engineering is on the critical path once, to install the SDK, and never again." },
+        { kind: "solve" },
+      ]},
+      { id: "faq-extension", title: "Common questions about the extension", body: [
+        { kind: "h3", text: "Do my end users need to install it?" },
+        { kind: "p", text: "No. The extension is only for you and your team while you build a campaign. Your end users see the tooltips and nudges through the SDK snippet already in your product, with nothing to install on their side." },
+        { kind: "h3", text: "Is it free?" },
+        { kind: "p", text: "Yes. The extension is free on every plan, including the free tier." },
+        { kind: "h3", text: "Which browsers does it support?" },
+        { kind: "p", text: "It is a Chrome extension and works in Chrome and other Chromium-based browsers such as Edge, Brave, and Arc. If you prefer not to install it, you can always type a CSS selector into the nudge form manually." },
+        { kind: "h3", text: "Does it change my product or need a deploy?" },
+        { kind: "p", text: "No. The extension runs in your browser to help you pick an element. It does not modify your product, and there is nothing for your engineers to ship." },
+      ]},
+    ],
+    related: [
+      { href: "/feature-adoption-nudges/", kind: "Use case", title: "Feature adoption nudges", desc: "The campaigns that use element anchoring most, and why the picker matters." },
+      { href: "/in-app-announcements/", kind: "Use case", title: "In-app announcements", desc: "Tooltips are one of the three formats you can anchor to an element." },
+      { href: "/all-features/", kind: "Product", title: "All features", desc: "The full FeaturePin surface, from announcements to analytics." },
+    ],
+    cta: {
+      heading: "Place your next tooltip in one click.",
+      sub: "Add the free extension, then anchor any nudge without touching code.",
+      label: "Get the Chrome extension",
+      href: "https://chromewebstore.google.com/detail/featurepin/bjgciolnincmkihmegpmdpijoociodik",
+    },
   },
 }
 

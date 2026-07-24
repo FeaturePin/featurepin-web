@@ -14,6 +14,7 @@
 - [In-app announcements](https://featurepin.com/in-app-announcements/): Explains how SaaS teams should announce product updates inside the app using modals, banners, and tooltips.
 - [All features](https://featurepin.com/all-features/): Lists FeaturePin's product surface, including announcements, nudges, targeting, analytics, and the SDK.
 - [Campaign analytics](https://featurepin.com/campaign-analytics/): Explains how teams measure impressions, clicks, dismissals, and campaign performance.
+- [Chrome extension](https://featurepin.com/chrome-extension/): Explains the free element picker extension that anchors tooltips and nudges to a page element by clicking it, with no CSS selectors.
 - [FeaturePin for fintech SaaS](https://featurepin.com/featurepin-for-fintech-saas/): Explains the fit for fintech teams that need lightweight, compliance-aware in-app messaging.
 - [FeaturePin for HR SaaS](https://featurepin.com/featurepin-for-hr-saas/): Explains the fit for HR software products with multi-role users and operational workflows.
 - [FeaturePin for marketing SaaS](https://featurepin.com/featurepin-for-marketing-saas/): Explains the fit for marketing tools with automation, reporting, and integration adoption gaps.

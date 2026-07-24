@@ -18,6 +18,7 @@ export default function Footer() {
             <a href="/feature-adoption-nudges/">Feature adoption nudges</a>
             <a href="/in-app-announcements/">In-app announcements</a>
             <a href="/campaign-analytics/">Campaign analytics</a>
+            <a href="/chrome-extension/">Chrome extension</a>
             <a href="/#pricing">Pricing</a>
           </div>
           <div className="footer-group">
