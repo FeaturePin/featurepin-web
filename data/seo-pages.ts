@@ -771,44 +771,6 @@ export const PAGES: Record<string, SeoPage> = {
 }
 
 export const ALTERNATIVE_PAGES: Record<string, SeoPage> = {
-  userguiding: {
-    ...PAGES["featurepin-vs-userguiding"],
-    title: "UserGuiding Alternative for SaaS Teams | FeaturePin",
-    description: "A focused UserGuiding alternative for SaaS teams that need in-app announcements and adoption nudges without paying for a broad onboarding suite.",
-    canonical: "https://featurepin.com/alternatives/userguiding/",
-    kind: "Alternative",
-    crumb: ["Alternatives", "UserGuiding"],
-    h1prefix: "A simpler",
-    h1accent: "UserGuiding alternative",
-    lede: "FeaturePin is for teams that do not need a full onboarding suite. Announce releases, nudge non-adopters, and keep the bill small.",
-    meta: [["Starting price", "$0"], ["Grow plan", "$29/mo"], ["Best for", "SaaS teams under 80 people"]],
-    intro: "UserGuiding is a broad product adoption platform. That breadth is useful when you need tours, checklists, surveys, a knowledge base, and a resource center in one tool. FeaturePin is intentionally narrower. It focuses on the two jobs many small SaaS teams actually run every month: announcing product updates and nudging users who still have not tried them.",
-    cta: {
-      heading: "Start with the narrow tool first.",
-      sub: "Use FeaturePin for announcements and nudges. Upgrade only when you actually outgrow that scope.",
-      label: "Start for free",
-      href: "https://app.featurepin.com/signup",
-    },
-  },
-  beamer: {
-    ...PAGES["featurepin-vs-beamer"],
-    title: "Beamer Alternative for In-App Nudges | FeaturePin",
-    description: "A Beamer alternative for SaaS teams that want in-app announcements plus behavioral feature adoption nudges.",
-    canonical: "https://featurepin.com/alternatives/beamer/",
-    kind: "Alternative",
-    crumb: ["Alternatives", "Beamer"],
-    h1prefix: "A nudge-first",
-    h1accent: "Beamer alternative",
-    lede: "Beamer is strong for product updates. FeaturePin adds the second move: nudging the users who still did not adopt the feature.",
-    meta: [["Starting price", "$0"], ["Grow plan", "$29/mo"], ["Best for", "Announcements plus nudges"]],
-    intro: "Beamer is a good fit when a changelog feed is the center of your product communication. FeaturePin is a better fit when the update itself is not enough and you want to follow up with users based on behavior. The difference is practical: do you only need to tell users what changed, or do you also need to move adoption after launch?",
-    cta: {
-      heading: "Turn launches into follow-up campaigns.",
-      sub: "Announce the feature first, then nudge the users who still missed it.",
-      label: "Start for free",
-      href: "https://app.featurepin.com/signup",
-    },
-  },
   pendo: {
     title: "Pendo Alternative for Small SaaS Teams | FeaturePin",
     description: "A lightweight Pendo alternative for SaaS teams that need in-app announcements and feature adoption nudges, not a full enterprise product analytics suite.",
@@ -852,8 +814,8 @@ export const ALTERNATIVE_PAGES: Record<string, SeoPage> = {
       ]},
     ],
     related: [
-      { href: "/alternatives/userguiding/", kind: "Alternative", title: "UserGuiding alternative", desc: "A focused comparison against a broader onboarding suite." },
-      { href: "/alternatives/beamer/", kind: "Alternative", title: "Beamer alternative", desc: "A comparison for teams moving beyond release feeds." },
+      { href: "/featurepin-vs-userguiding/", kind: "Compare", title: "FeaturePin vs UserGuiding", desc: "A focused comparison against a broader onboarding suite." },
+      { href: "/featurepin-vs-beamer/", kind: "Compare", title: "FeaturePin vs Beamer", desc: "A comparison for teams moving beyond release feeds." },
       { href: "/feature-adoption-nudges/", kind: "Use case", title: "Feature adoption nudges", desc: "The core workflow behind FeaturePin." },
     ],
     cta: {

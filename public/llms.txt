@@ -21,8 +21,6 @@
 - [FeaturePin for DevTools](https://featurepin.com/featurepin-for-devtools/): Explains the fit for developer-facing SaaS products that need low-noise in-app communication.
 - [FeaturePin vs UserGuiding](https://featurepin.com/featurepin-vs-userguiding/): Comparison page for teams evaluating a focused announce-and-nudge tool against a broader adoption suite.
 - [FeaturePin vs Beamer](https://featurepin.com/featurepin-vs-beamer/): Comparison page for teams choosing between announcement-first tooling and announcement-plus-nudge tooling.
-- [UserGuiding alternative](https://featurepin.com/alternatives/userguiding/): Paid search landing page for teams considering a simpler alternative to UserGuiding.
-- [Beamer alternative](https://featurepin.com/alternatives/beamer/): Paid search landing page for teams that want announcements plus behavioral nudges.
 - [Pendo alternative](https://featurepin.com/alternatives/pendo/): Paid search landing page for small SaaS teams that do not need a full enterprise product experience platform.
 - [Getting started](https://featurepin.com/resources/getting-started/): Step-by-step guide for installing the SDK and launching the first campaign.
 - [Feature adoption guide](https://featurepin.com/resources/feature-adoption-guide/): Long-form guide covering definitions, metrics, and tactics for improving feature adoption.
