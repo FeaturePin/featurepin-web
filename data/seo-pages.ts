@@ -770,4 +770,100 @@ export const PAGES: Record<string, SeoPage> = {
   },
 }
 
+export const ALTERNATIVE_PAGES: Record<string, SeoPage> = {
+  userguiding: {
+    ...PAGES["featurepin-vs-userguiding"],
+    title: "UserGuiding Alternative for SaaS Teams | FeaturePin",
+    description: "A focused UserGuiding alternative for SaaS teams that need in-app announcements and adoption nudges without paying for a broad onboarding suite.",
+    canonical: "https://featurepin.com/alternatives/userguiding/",
+    kind: "Alternative",
+    crumb: ["Alternatives", "UserGuiding"],
+    h1prefix: "A simpler",
+    h1accent: "UserGuiding alternative",
+    lede: "FeaturePin is for teams that do not need a full onboarding suite. Announce releases, nudge non-adopters, and keep the bill small.",
+    meta: [["Starting price", "$0"], ["Grow plan", "$29/mo"], ["Best for", "SaaS teams under 80 people"]],
+    intro: "UserGuiding is a broad product adoption platform. That breadth is useful when you need tours, checklists, surveys, a knowledge base, and a resource center in one tool. FeaturePin is intentionally narrower. It focuses on the two jobs many small SaaS teams actually run every month: announcing product updates and nudging users who still have not tried them.",
+    cta: {
+      heading: "Start with the narrow tool first.",
+      sub: "Use FeaturePin for announcements and nudges. Upgrade only when you actually outgrow that scope.",
+      label: "Start for free",
+      href: "https://app.featurepin.com/signup",
+    },
+  },
+  beamer: {
+    ...PAGES["featurepin-vs-beamer"],
+    title: "Beamer Alternative for In-App Nudges | FeaturePin",
+    description: "A Beamer alternative for SaaS teams that want in-app announcements plus behavioral feature adoption nudges.",
+    canonical: "https://featurepin.com/alternatives/beamer/",
+    kind: "Alternative",
+    crumb: ["Alternatives", "Beamer"],
+    h1prefix: "A nudge-first",
+    h1accent: "Beamer alternative",
+    lede: "Beamer is strong for product updates. FeaturePin adds the second move: nudging the users who still did not adopt the feature.",
+    meta: [["Starting price", "$0"], ["Grow plan", "$29/mo"], ["Best for", "Announcements plus nudges"]],
+    intro: "Beamer is a good fit when a changelog feed is the center of your product communication. FeaturePin is a better fit when the update itself is not enough and you want to follow up with users based on behavior. The difference is practical: do you only need to tell users what changed, or do you also need to move adoption after launch?",
+    cta: {
+      heading: "Turn launches into follow-up campaigns.",
+      sub: "Announce the feature first, then nudge the users who still missed it.",
+      label: "Start for free",
+      href: "https://app.featurepin.com/signup",
+    },
+  },
+  pendo: {
+    title: "Pendo Alternative for Small SaaS Teams | FeaturePin",
+    description: "A lightweight Pendo alternative for SaaS teams that need in-app announcements and feature adoption nudges, not a full enterprise product analytics suite.",
+    canonical: "https://featurepin.com/alternatives/pendo/",
+    kind: "Alternative",
+    crumb: ["Alternatives", "Pendo"],
+    h1prefix: "A lightweight",
+    h1accent: "Pendo alternative",
+    lede: "Pendo is built for deep analytics and enterprise-scale product operations. FeaturePin is built for the smaller team that needs announcements and nudges now.",
+    meta: [["Starting price", "$0"], ["Grow plan", "$29/mo"], ["Best for", "Lean SaaS teams"]],
+    intro: "Pendo is a much broader platform than FeaturePin. It covers product analytics, guides, feedback, roadmaps, session replay, and enterprise governance depending on plan and package. That can be the right purchase for a mature product organization. It can also be far more tool than a 10 to 80 person SaaS company needs when the immediate problem is simple: users are missing shipped features.",
+    sections: [
+      { id: "quick-answer", title: "The short answer", body: [
+        { kind: "ul", items: ["Choose Pendo if you need a full product experience platform with analytics, guides, feedback, and enterprise governance.", "Choose FeaturePin if your current job is in-app announcements and feature adoption nudges.", "Choose neither if you do not yet have enough active users to learn from in-app messaging."] },
+      ]},
+      { id: "scope", title: "Scope is the buying decision", body: [
+        { kind: "p", text: "Pendo is designed for teams that want a broad product operations platform. FeaturePin is designed for teams that want one small system for release communication and adoption follow-up." },
+        { kind: "modular", items: [
+          { num: "01", title: "Announcements", body: "FeaturePin gives PMs modals, banners, and tooltips for launches and product updates." },
+          { num: "02", title: "Nudges", body: "FeaturePin can trigger a tooltip when a user has not visited a feature area in a set number of days." },
+          { num: "03", title: "Analytics", body: "FeaturePin tracks impressions, clicks, and dismissals so you can judge whether the message worked." },
+          { num: "04", title: "No suite sprawl", body: "No session replay, no NPS, no product tours, no roadmap module. That is deliberate." },
+        ]},
+      ]},
+      { id: "pricing", title: "Pricing and procurement", body: [
+        { kind: "p", text: "Pendo's public pricing page lists paid bundles as custom pricing, with a free plan for small usage. FeaturePin publishes simple MAU-based pricing: free up to 1,000 MAU, Grow at $29 per month up to 10,000 MAU, and Scale at $79 per month up to 25,000 MAU." },
+        { kind: "p", text: "For a small SaaS team, transparent pricing matters because the tool often starts as an experiment. You want to know the cost before booking a demo, running procurement, or explaining the purchase internally." },
+        { kind: "stat", num: "$29", label: "is FeaturePin's Grow plan for teams that want the announce-and-nudge layer without enterprise packaging." },
+      ]},
+      { id: "when-pendo-wins", title: "When Pendo is the better choice", body: [
+        { kind: "p", text: "Pendo makes sense when product analytics is central to the purchase. If you need deep retroactive analytics, complex reporting, session replay, feedback workflows, and governance across a larger product organization, Pendo's breadth can justify the cost and setup." },
+        { kind: "p", text: "It is also a better fit when a dedicated product operations or growth team will actively maintain the platform. Broad tools become valuable when someone owns the full surface area." },
+      ]},
+      { id: "when-featurepin-wins", title: "When FeaturePin is the better choice", body: [
+        { kind: "p", text: "FeaturePin is the better fit when the roadmap has outgrown email announcements but the company has not outgrown pragmatic tooling. One SDK snippet gets you campaign creation, targeting, in-app rendering, and basic performance analytics." },
+        { kind: "p", text: "The tradeoff is intentional. You give up the broad analytics suite and keep the workflow your team is likely to use every month: announce a release, follow up with non-adopters, measure clicks and dismissals, repeat." },
+        { kind: "solve" },
+      ]},
+      { id: "decision-rule", title: "A practical decision rule", body: [
+        { kind: "p", text: "If your team is buying a product analytics platform, evaluate Pendo seriously. If your team is trying to make new features visible and adopted without adding another large operational system, start with FeaturePin." },
+      ]},
+    ],
+    related: [
+      { href: "/alternatives/userguiding/", kind: "Alternative", title: "UserGuiding alternative", desc: "A focused comparison against a broader onboarding suite." },
+      { href: "/alternatives/beamer/", kind: "Alternative", title: "Beamer alternative", desc: "A comparison for teams moving beyond release feeds." },
+      { href: "/feature-adoption-nudges/", kind: "Use case", title: "Feature adoption nudges", desc: "The core workflow behind FeaturePin." },
+    ],
+    cta: {
+      heading: "Use the tool your team will actually maintain.",
+      sub: "Start with announcements and nudges. Keep the suite purchase for when you truly need the suite.",
+      label: "Start for free",
+      href: "https://app.featurepin.com/signup",
+    },
+  },
+}
+
 export const SEO_SLUGS = Object.keys(PAGES).filter(k => k !== 'feature-adoption-guide' && k !== 'getting-started')
+export const ALTERNATIVE_SLUGS = Object.keys(ALTERNATIVE_PAGES)
