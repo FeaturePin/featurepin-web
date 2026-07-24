@@ -174,6 +174,11 @@ function Solution() {
                 <span className="op">on</span>
                 <span className="tk">#export-button</span>
               </div>
+              <p style={{marginTop: 12, fontSize: 12.5, color: "var(--fg-dim)", maxWidth: "none"}}>
+                Never write a selector. Click the element in your app with the{" "}
+                <a href="https://chromewebstore.google.com/detail/featurepin/bjgciolnincmkihmegpmdpijoociodik" target="_blank" rel="noopener noreferrer" style={{color: "var(--accent)"}}>Chrome extension</a>{" "}
+                and FeaturePin fills it in for you.
+              </p>
             </div>
           </div>
         </div>

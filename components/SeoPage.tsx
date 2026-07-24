@@ -138,10 +138,16 @@ export default function SeoPageTemplate({ page }: { page: SeoPage }) {
 
         <section className="final" id="cta">
           <div className="rail final-inner">
-            <h2>Your next feature deserves to be seen.</h2>
-            <p>Start for free. No credit card required.</p>
-            <a className="btn btn-primary btn-lg" href="https://app.featurepin.com/signup">
-              Start for free <span className="arr"><ArrIcon /></span>
+            <h2>{page.cta ? page.cta.heading : 'Your next feature deserves to be seen.'}</h2>
+            <p>{page.cta ? page.cta.sub : 'Start for free. No credit card required.'}</p>
+            <a
+              className="btn btn-primary btn-lg"
+              href={page.cta ? page.cta.href : 'https://app.featurepin.com/signup'}
+              {...(page.cta && page.cta.href.startsWith('http') && !page.cta.href.includes('featurepin.com')
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+            >
+              {page.cta ? page.cta.label : 'Start for free'} <span className="arr"><ArrIcon /></span>
             </a>
           </div>
         </section>
