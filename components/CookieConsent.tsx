@@ -18,6 +18,10 @@ function setCookie(name: string, value: string, days: number) {
   document.cookie = `${name}=${encodeURIComponent(value)};expires=${expires.toUTCString()};path=/`
 }
 
+function notifyConsentUpdated() {
+  window.dispatchEvent(new Event('cookieConsentUpdated'))
+}
+
 export default function CookieConsent() {
   const [showAlert, setShowAlert] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
@@ -40,12 +44,14 @@ export default function CookieConsent() {
 
   const handleAccept = () => {
     setCookie(COOKIE_NAME, 'true', COOKIE_DAYS)
+    notifyConsentUpdated()
     setShowAlert(false)
     setShowSettings(false)
   }
 
   const handleSave = () => {
     setCookie(COOKIE_NAME, analytics ? 'analytics' : 'essential', COOKIE_DAYS)
+    notifyConsentUpdated()
     setShowAlert(false)
     setShowSettings(false)
   }
