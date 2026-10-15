@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { checkPublicFiles, checkHtml, sitemapPaths } from './site-quality.mjs'
+import { checkCommercialClaims, checkPublicFiles, checkHtml, sitemapPaths } from './site-quality.mjs'
 
 test('sitemap rejects foreign and duplicate routes', () => {
   const xml = '<loc>https://featurepin.com/</loc><loc>https://featurepin.com/</loc><loc>https://bad.example/</loc>'
@@ -26,4 +26,8 @@ test('built HTML catches early analytics and repeated IDs', () => {
   const errors = checkHtml(html, '/', new Set(['/']), 'public')
   assert(errors.some((error) => error.includes('before consent')))
   assert(errors.some((error) => error.includes('duplicate id')))
+})
+
+test('pricing check rejects a missing Grow or Scale claim', () => {
+  assert(checkCommercialClaims('<main>Free Up to 1K MAU</main>').some((error) => error.includes('10K MAU')))
 })

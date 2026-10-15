@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { checkHtml, sitemapPaths } from './site-quality.mjs'
+import { checkCommercialClaims, checkHtml, sitemapPaths } from './site-quality.mjs'
 
 const output = '.next/server/app'
 if (!fs.existsSync(output)) throw new Error('Production HTML missing; run npm run build')
@@ -14,7 +14,9 @@ for (const route of knownPaths) {
     errors.push(`${route}: prerendered HTML missing`)
     continue
   }
-  errors.push(...checkHtml(fs.readFileSync(file, 'utf8'), route, knownPaths, 'public'))
+  const html = fs.readFileSync(file, 'utf8')
+  errors.push(...checkHtml(html, route, knownPaths, 'public'))
+  if (route === '/') errors.push(...checkCommercialClaims(html))
 }
 if (errors.length) {
   console.error(errors.join('\n'))

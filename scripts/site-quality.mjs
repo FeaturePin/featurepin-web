@@ -23,6 +23,15 @@ export function checkPublicFiles(files) {
   return [...errors, ...sitemap.errors]
 }
 
+export function checkCommercialClaims(html) {
+  const visible = html.replace(/<script\b[\s\S]*?<\/script>/gi, '').replace(/<[^>]+>/g, ' ')
+  const errors = []
+  for (const claim of ['Up to 1K MAU', 'Up to 10K MAU', 'Up to 25K MAU', '$29', '$79']) {
+    if (!visible.includes(claim)) errors.push(`home: pricing claim missing: ${claim}`)
+  }
+  return errors
+}
+
 export function checkHtml(html, route, knownPaths, publicDir) {
   const errors = []
   if (html.includes('googletagmanager.com/gtag/js')) errors.push(`${route}: analytics loader prerendered before consent`)
