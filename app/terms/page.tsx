@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 export const metadata: Metadata = {
   title: 'Terms of Service — FeaturePin',
   description: 'FeaturePin Terms of Service. Rules for using the platform.',
+  alternates: { canonical: '/terms/' },
 }
 
 export default function TermsPage() {
