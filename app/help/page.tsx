@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Help Center — FeaturePin',
   description: 'Step-by-step tutorials for FeaturePin. Learn how to install the SDK, create campaigns, and understand your analytics.',
+  alternates: { canonical: '/help/' },
 }
 
 const sections = [

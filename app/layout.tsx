@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   title: 'FeaturePin — In-App Announcements and Nudges for SaaS',
   description: 'Announce feature launches and nudge users who missed them. No engineering required after the first install.',
   metadataBase: new URL('https://featurepin.com'),
+  alternates: { canonical: '/' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

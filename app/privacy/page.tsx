@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 export const metadata: Metadata = {
   title: 'Privacy Policy — FeaturePin',
   description: 'FeaturePin Privacy Policy. How we collect, use, and protect your personal data.',
+  alternates: { canonical: '/privacy/' },
 }
 
 export default function PrivacyPage() {
